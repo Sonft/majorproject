@@ -9,18 +9,19 @@
 //Amar cleaned up the goddamn code, Jerry.
 //At least Jerry made code, Amar.
 //I was here on the ground floor Jerry, do you even love this project? are you even invested?
-//This is my child Amar. 
+//This is my child Amar.
 
 //setting variables
 let gameState = 1;
-let playerTurn = 1;
-let playerCountry;
+let playerTurn = 0;
 let countryInfoClicked = 0;
 let blockWidth;
 let blockHeight;
 let columns = 54;
 let rows = 41;
 let map;
+let year = 1700;
+let endTurn = false;
 //units! Bois
 let infantry;
 
@@ -108,7 +109,6 @@ let coloniesOfGreatBritain = [];
 let coloniesOfFrance = [];
 let coloniesOfSpain = [];
 let coloniesOfPortugal = [];
-
 
 //setup
 function setup() {
@@ -220,6 +220,16 @@ function setup() {
     coloniesOfPortugal
   );
 
+  playerCountries.push(
+    playerGreatBritain,
+    playerFrance,
+    playerSpain,
+    playerPortugal
+
+  );
+
+
+  //THIS IS A LIST OF ALL THE COUNTIES
   masterListOfCountry.push(
     alaska,
     britishColumbia,
@@ -296,6 +306,31 @@ function setup() {
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //just calls other functions
 function draw() {
 
@@ -352,8 +387,20 @@ function backGroundOne() {
 //starts the function chain that makes the world
 function backGroundTwo() {
   background(0, 0, 255);
-  displayGrid();
-  makeEarthMap();
+  while (endTurn === false){
+    displayGrid();
+    makeEarthMap();
+    headsUpDisplay(playerCountries[playerTurn]);
+    playerTurnFunc(playerCountries[playerTurn]);
+  }
+  if (playerTurn === 3){
+    playerTurn = 0;
+    endTurn = false;
+  }
+  else{
+    playerTurn += 1;
+    endTurn = false;
+  }
 }
 
 //makes the tutorial screen
@@ -478,10 +525,14 @@ function makeEarthMap() {
   //Oceania
   indonesia.display();
   australia.display();
-  headsUpDisplay(playerCountry);
 }
 
-function headsUpDisplay(playerCountry, colour, resources, gold) {
+
+
+
+
+
+function headsUpDisplay(playerCountry) {
   fill(255);
   rect(0, windowHeight - 3 * blockHeight, windowWidth, windowHeight);
   //text label = gold, then resources, then player country
@@ -522,6 +573,51 @@ function displayGrid() {
     }
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+//PLAYER TURN FUNCTION//INCOMPLETE
+function playerTurnFunc(player){
+  for (let x =0; x<masterListOfCountry.length;x++){
+    if (playerCountries[playerTurn].o === masterListOfCountry[x].o){
+      playerCountries[playerTurn].r += masterListOfCountry[x].r;
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -621,6 +717,47 @@ class Infantry {
 
 
 // IT ENDS RIGHT HERE
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
