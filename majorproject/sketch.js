@@ -1,5 +1,5 @@
 //Amar Minhas + Jerry Xiao Peer Programming Project
-//this project is a continuation of my previous projects
+//this project is a continuation of our previous projects
 //We both worked on the same computer so the coding was mainly uniform. We talked to each other about the solutions
 //(Jerry is better at typing so he wrote most of the code - Amar)
 //Amar wrote most of the functions and the ideas
@@ -220,13 +220,13 @@ function setup() {
     coloniesOfPortugal
   );
 
-  playerCountries.push(
-    playerGreatBritain,
-    playerFrance,
-    playerSpain,
-    playerPortugal
-
-  );
+  // playerCountries.push(
+  //   playerGreatBritain,
+  //   playerFrance,
+  //   playerSpain,
+  //   playerPortugal
+  //
+  // );
 
 
   //THIS IS A LIST OF ALL THE COUNTIES
@@ -387,22 +387,24 @@ function backGroundOne() {
 //starts the function chain that makes the world
 function backGroundTwo() {
   background(0, 0, 255);
-  while (endTurn === false){
-    displayGrid();
-    makeEarthMap();
-    headsUpDisplay(playerCountries[playerTurn]);
-    playerTurnFunc(playerCountries[playerTurn]);
-  }
-  if (playerTurn === 3){
-    playerTurn = 0;
-    endTurn = false;
-  }
-  else{
-    playerTurn += 1;
-    endTurn = false;
+
+  displayGrid();
+  makeEarthMap();
+  headsUpDisplay(playerCountries[playerTurn]);
+  playerTurnFunc(playerCountries[playerTurn]);
+
+
+  if (endTurn === true){
+    if (playerTurn === playerCountries.length){
+      endTurn = false;
+      playerTurn = 0;
+    }
+    else if (playerTurn < playerCountries.length){
+      playerTurn += 1;
+      endTurn = false;
+    }
   }
 }
-
 //makes the tutorial screen
 function backGroundThree() {
   background(0, 0, 0);
@@ -443,29 +445,28 @@ function askPlayerAmount() {
 
   rect(0, 0, windowWidth/2, windowHeight / 2);//top left === 1
   if ( keyIsPressed && key === "1") {
-    playerCountries.push(greatBritain);
+    playerCountries.push(playerGreatBritain);
     gameState = 2;
 
   }
-
   fill(255,0,0);
   rect(windowWidth/2, windowHeight/2, windowWidth, windowHeight);//botttomm right === 4
   if (keyIsPressed && key === "4") {
-    playerCountries.push(greatBritain, france, spain, portugal);
+    playerCountries.push(playerGreatBritain, playerFrance, playerSpain, playerPortugal);
     gameState = 2;
   }
 
   fill(0,0,255);
   rect(0, windowHeight/2, windowWidth/2, windowHeight);// nottam left === 3
   if (keyIsPressed && key === "3") {
-    playerCountries.push(greatBritain, france, spain);
+    playerCountries.push(playerGreatBritain, playerFrance, playerSpain);
     gameState = 2;
   }
 
   fill(0,255,70);
   rect(windowWidth/2, 0, windowWidth, windowHeight / 2);//top right === 2
   if (keyIsPressed && key === "2") {
-    playerCountries.push(greatBritain, france);
+    playerCountries.push(playerGreatBritain, playerFrance);
     gameState = 2;
   }
 
@@ -548,12 +549,39 @@ function makeEarthMap() {
 
 
 
+//end turn counter in england
+//button for end turn
+//
 
-
-
+// Changes colour based on who is playing and displays the amount of gold, resources, and other things
 function headsUpDisplay(playerCountry) {
   fill(255);
-  rect(0, windowHeight - 3 * blockHeight, windowWidth, windowHeight);
+  rect(windowWidth - 50, windowHeight - 50, windowWidth, windowHeight);
+  if (mouseIsPressed && mouseX > windowWidth - 50 && mouseY > windowHeight - 50) {
+    endTurn = true;
+  }
+  if (playerCountries[playerTurn].o === "Great Britain") {
+    fill("red");
+    rect(0, windowHeight - 3 * blockHeight, windowWidth, windowHeight);
+
+  }
+  else if (playerCountries[playerTurn].o === "France") {
+    fill("blue");
+    rect(0, windowHeight - 3 * blockHeight, windowWidth, windowHeight);
+
+  }
+
+  else if (playerCountries[playerTurn].o === "Portugal") {
+    fill("green");
+    rect(0, windowHeight - 3 * blockHeight, windowWidth, windowHeight);
+
+  }
+
+  else if (playerCountries[playerTurn].o === "Spain") {
+    fill("yellow");
+    rect(0, windowHeight - 3 * blockHeight, windowWidth, windowHeight);
+
+  }
   //text label = gold, then resources, then player country
 }
 
@@ -806,7 +834,7 @@ function clickOnCountry(x1, y1, x2, y2) {
 
 
 
-//THE DISPLAY FUNSTION USES THIS TOO ALSO
+//THE DISPLAY FUNCTION USES THIS TOO ALSO
 //just checks if you moused over a thing
 function countryMousedOver(x1, y1, x2, y2) {
   if (x1 * blockWidth < mouseX && mouseX < x2 * blockWidth && y1 * blockHeight < mouseY && mouseY < y2 * blockHeight) {
