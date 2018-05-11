@@ -109,6 +109,12 @@ let coloniesOfGreatBritain = [];
 let coloniesOfFrance = [];
 let coloniesOfSpain = [];
 let coloniesOfPortugal = [];
+//THE UNITS OF EACH GREAT POWER
+let unitsOfGreatBritain = [];
+let unitsOfFrance = [];
+let unitsOfSpain = [];
+let unitsOfPortugal = [];
+
 
 //setup
 function setup() {
@@ -197,27 +203,32 @@ function setup() {
     "Great Britain",
     0,
     0,
-    coloniesOfGreatBritain);
+    coloniesOfGreatBritain,
+    unitsOfGreatBritain
+  );
 
   playerFrance = new Player(
     "France",
     0,
     0,
-    coloniesOfFrance
+    coloniesOfFrance,
+    unitsOfFrance
   );
 
   playerSpain = new Player(
     "Spain",
     0,
     0,
-    coloniesOfSpain
+    coloniesOfSpain,
+    unitsOfSpain
   );
 
   playerPortugal = new Player(
     "Portugal",
     0,
     0,
-    coloniesOfPortugal
+    coloniesOfPortugal,
+    unitsOfPortugal
   );
 
   // playerCountries.push(
@@ -387,21 +398,23 @@ function backGroundOne() {
 //starts the function chain that makes the world
 function backGroundTwo() {
   background(0, 0, 255);
-
-  displayGrid();
-  makeEarthMap();
-  headsUpDisplay(playerCountries[playerTurn]);
-  playerTurnFunc(playerCountries[playerTurn]);
-
+  if (endTurn === false){
+    displayGrid();
+    makeEarthMap();
+    playerTurnFunc(playerCountries[playerTurn]);
+    headsUpDisplay(playerCountries[playerTurn]);
+  }
 
   if (endTurn === true){
-    if (playerTurn === playerCountries.length){
+    if (playerTurn === playerCountries.length -1){
       endTurn = false;
       playerTurn = 0;
+      print(playerTurn);//for code fixing
     }
     else if (playerTurn < playerCountries.length){
       playerTurn += 1;
       endTurn = false;
+      print(playerTurn);//for code fixing
     }
   }
 }
@@ -555,9 +568,7 @@ function makeEarthMap() {
 
 // Changes colour based on who is playing and displays the amount of gold, resources, and other things
 function headsUpDisplay(playerCountry) {
-  fill(255);
-  rect(windowWidth - 50, windowHeight - 50, windowWidth, windowHeight);
-  if (mouseIsPressed && mouseX > windowWidth - 50 && mouseY > windowHeight - 50) {
+  if (mouseIsPressed && mouseX > windowWidth - 50 && mouseY > windowHeight - 50 && endTurn === false) {
     endTurn = true;
   }
   if (playerCountries[playerTurn].o === "Great Britain") {
@@ -582,6 +593,8 @@ function headsUpDisplay(playerCountry) {
     rect(0, windowHeight - 3 * blockHeight, windowWidth, windowHeight);
 
   }
+  fill(255);
+  rect(windowWidth - 50, windowHeight - 50, windowWidth, windowHeight);
   //text label = gold, then resources, then player country
 }
 
@@ -649,8 +662,12 @@ function playerTurnFunc(player){
 
 
 
+//IM GONNA FIX THE PROBLEMS with clicking and it repeating the function for as long as you clicked it
+function mouseClicked(playerCountries){
+  let clickableThings = [];
 
 
+}
 
 
 
@@ -681,11 +698,12 @@ class PlayerHUDInfo {
 }
 //THIS IS THE INFO FOR EVERY COUNTRY: HUD USES THIS, THE GAME WILL CHANGE THIS DEPENDING ON WHAT HAPPENS IN TURNS (IE. events, turn transitions,etc)
 class Player {
-  constructor(ownedBy, gold, resources, colonies) {
+  constructor(ownedBy, gold, resources, colonies, units) {
     this.o = ownedBy;
     this.g = gold;
     this.r = resources;
     this.c = colonies;
+    this.u = units;
   }
   determineColonies(colonies) {
 
