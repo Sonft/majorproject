@@ -132,7 +132,7 @@ function setup() {
   yukon = new Province("Yukon", 3, 6, 0, 5, "No One", 0, 0, 0);
   northWest = new Province("Northwest Territories", 6, 12, 0, 5, "No One", 0, 0, 0);
   GoSL = new Province("Gulf Of St.Lawrence", 12, 14, 4, 8, "No One", 0, 0, 0);
-  quebec = new Province("Quebec", 14, 17, 1, 6, "France", 0, 0, 0);
+  quebec = new Province("Quebec", 14, 17, 1, 6, "France", 2, 5, 0);
   //'Murica
   cascadian = new Province("Cascadia", 3, 6, 5, 10, "No One", 0, 0, 0);
   louisiana = new Province("Louisiana", 6, 10, 5, 10, "No One", 0, 0, 0);
@@ -204,7 +204,8 @@ function setup() {
     0,
     0,
     coloniesOfGreatBritain,
-    unitsOfGreatBritain
+    unitsOfGreatBritain,
+    false
   );
 
   playerFrance = new Player(
@@ -212,7 +213,8 @@ function setup() {
     0,
     0,
     coloniesOfFrance,
-    unitsOfFrance
+    unitsOfFrance,
+    false
   );
 
   playerSpain = new Player(
@@ -220,7 +222,8 @@ function setup() {
     0,
     0,
     coloniesOfSpain,
-    unitsOfSpain
+    unitsOfSpain,
+    false
   );
 
   playerPortugal = new Player(
@@ -228,7 +231,8 @@ function setup() {
     0,
     0,
     coloniesOfPortugal,
-    unitsOfPortugal
+    unitsOfPortugal,
+    false
   );
 
   // playerCountries.push(
@@ -401,7 +405,7 @@ function backGroundTwo() {
   if (endTurn === false){
     displayGrid();
     makeEarthMap();
-    playerTurnFunc(playerCountries[playerTurn]);
+    playerTurnFunc(playerTurn);
     headsUpDisplay(playerCountries[playerTurn]);
   }
 
@@ -642,10 +646,14 @@ function displayGrid() {
 
 
 //PLAYER TURN FUNCTION//INCOMPLETE
-function playerTurnFunc(player){
-  for (let x =0; x<masterListOfCountry.length;x++){
-    if (playerCountries[playerTurn].o === masterListOfCountry[x].o){
-      playerCountries[playerTurn].r += masterListOfCountry[x].r;
+function playerTurnFunc(playerTurn){
+  if (playerCountries[playerTurn].att === false){
+    for (let x =0; x<masterListOfCountry.length;x++){
+      if (playerCountries[playerTurn].o === masterListOfCountry[x].ownedBy){
+        playerCountries[playerTurn].r += masterListOfCountry[x].r;
+        playerCountries[playerTurn].g += masterListOfCountry[x].g;
+        playerCountries[playerTurn].att = true;
+      }
     }
   }
 }
@@ -659,10 +667,14 @@ function playerTurnFunc(player){
 
 
 
+
+
+
 //IM GONNA FIX THE PROBLEMS with clicking and it repeating the function for as long as you clicked it
-function mouseClicked(playerCountries){
+function mouseClicked(playerTurn){
   if (mouseX > windowWidth - 50 && mouseY > windowHeight - 50 && endTurn === false) {
     endTurn = true;
+    playerCountries[playerTurn].att === false;
   }
   let clickableThings = [];
 
@@ -698,12 +710,13 @@ class PlayerHUDInfo {
 }
 //THIS IS THE INFO FOR EVERY COUNTRY: HUD USES THIS, THE GAME WILL CHANGE THIS DEPENDING ON WHAT HAPPENS IN TURNS (IE. events, turn transitions,etc)
 class Player {
-  constructor(ownedBy, gold, resources, colonies, units) {
+  constructor(ownedBy, gold, resources, colonies, units,addedThisTurn) {
     this.o = ownedBy;
     this.g = gold;
     this.r = resources;
     this.c = colonies;
     this.u = units;
+    this.att = addedThisTurn;
   }
   determineColonies(colonies) {
 
