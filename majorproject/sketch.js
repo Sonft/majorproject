@@ -568,9 +568,6 @@ function makeEarthMap() {
 
 // Changes colour based on who is playing and displays the amount of gold, resources, and other things
 function headsUpDisplay(playerCountry) {
-  if (mouseIsPressed && mouseX > windowWidth - 50 && mouseY > windowHeight - 50 && endTurn === false) {
-    endTurn = true;
-  }
   if (playerCountries[playerTurn].o === "Great Britain") {
     fill("red");
     rect(0, windowHeight - 3 * blockHeight, windowWidth, windowHeight);
@@ -664,6 +661,9 @@ function playerTurnFunc(player){
 
 //IM GONNA FIX THE PROBLEMS with clicking and it repeating the function for as long as you clicked it
 function mouseClicked(playerCountries){
+  if (mouseX > windowWidth - 50 && mouseY > windowHeight - 50 && endTurn === false) {
+    endTurn = true;
+  }
   let clickableThings = [];
 
 
