@@ -61,95 +61,10 @@ function setup() {
   //
   // );
 
-
-  //THIS IS A LIST OF ALL THE COUNTIES
-  masterListOfCountry.push(
-    alaska,
-    britishColumbia,
-    yukon,
-    northWest,
-    GoSL,
-    quebec,
-    //American
-    cascadian,
-    louisiana,
-    eastAmerica,
-    florida,
-    //Central America
-    mexico,
-    centAmeri,
-    panama,
-    cuba,
-    //South America
-    venezuela,
-    guinea,
-    bolivia,
-    brazil,
-    peru,
-    chile,
-    laPlata,
-    uruguay,
-    //Western Europe
-    greatBritain,
-    portugal,
-    spain,
-    france,
-    //Rest Of Europe
-    restOfEurope,
-    italy,
-    scandinavia,
-    //North Africa
-    morocco,
-    algeria,
-    tunis,
-    egypt,
-    //Central Africa
-    middleAfrica,
-    //South/Central Africa
-    westCongo,
-    congo,
-    somalia,
-    mombasa,
-    southAfrica,
-    madagascar,
-    //Middle East + India
-    iran,
-    afganistan,
-    pakistan,
-    arabia,
-    india,
-    sriLanka,
-    //Russia and Japan
-    russia,
-    japan,
-    northSiberia,
-    southSiberia,
-    //China + IndoChina
-    mongolia,
-    tibet,
-    centralChina,
-    easternChina,
-    southChina,
-    indoChina,
-    //Oceania
-    indonesia,
-    australia
-
-  );
+  pushAllTheCountries();
 }
 //just calls other functions
 function draw() {
 
   checkState();
-}
-
-class Infantry {
-  constructor(x, y, h) {
-    this.x = x;
-    this.y = y;
-    this.health = h;
-  }
-  display() {
-
-  }
 }

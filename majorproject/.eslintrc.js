@@ -20,6 +20,7 @@ module.exports = {
         "no-floating-decimal": ["warn"],
         "brace-style": ["warn", "stroustrup"],
         "no-var": ["warn"],
+        "no-undef": ["warn"],
 
         // override default options for rules from base configurations
         "comma-dangle": ["warn", "always"],

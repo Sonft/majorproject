@@ -79,6 +79,8 @@ let playerPortugal;
 function makeProvinceVariables() {
   //setting objects
   //Canadian Cores
+  //THIS IS A LIST OF ALL THE COUNTIES
+
   alaska = new Province("Alaska", 0, 2, 0, 2, "No One", 2, 3, 0);
   britishColumbia = new Province("British Columbia", 2, 3, 0, 5, "No One", 0, 0, 0);
   yukon = new Province("Yukon", 3, 6, 0, 5, "No One", 0, 0, 0);
@@ -149,4 +151,81 @@ function makeProvinceVariables() {
   //Oceania
   indonesia = new Province("Indonesia", 47, 53, 26, 27, "No One", 0, 0, 0);
   australia = new Province("Australia", 47, 53, 31, 36, "No One", 0, 0, 0);
+}
+
+function pushAllTheCountries() {
+  //THIS IS A LIST OF ALL THE COUNTIES
+  masterListOfCountry.push(
+    alaska,
+    britishColumbia,
+    yukon,
+    northWest,
+    GoSL,
+    quebec,
+    //American
+    cascadian,
+    louisiana,
+    eastAmerica,
+    florida,
+    //Central America
+    mexico,
+    centAmeri,
+    panama,
+    cuba,
+    //South America
+    venezuela,
+    guinea,
+    bolivia,
+    brazil,
+    peru,
+    chile,
+    laPlata,
+    uruguay,
+    //Western Europe
+    greatBritain,
+    portugal,
+    spain,
+    france,
+    //Rest Of Europe
+    restOfEurope,
+    italy,
+    scandinavia,
+    //North Africa
+    morocco,
+    algeria,
+    tunis,
+    egypt,
+    //Central Africa
+    middleAfrica,
+    //South/Central Africa
+    westCongo,
+    congo,
+    somalia,
+    mombasa,
+    southAfrica,
+    madagascar,
+    //Middle East + India
+    iran,
+    afganistan,
+    pakistan,
+    arabia,
+    india,
+    sriLanka,
+    //Russia and Japan
+    russia,
+    japan,
+    northSiberia,
+    southSiberia,
+    //China + IndoChina
+    mongolia,
+    tibet,
+    centralChina,
+    easternChina,
+    southChina,
+    indoChina,
+    //Oceania
+    indonesia,
+    australia
+
+  );
 }
