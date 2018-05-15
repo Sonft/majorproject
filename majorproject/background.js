@@ -56,11 +56,13 @@ function backGroundTwo() {
 
   if (endTurn === true){
     if (playerTurn === playerCountries.length -1){
+      playerCountries[playerTurn].att === false;
       endTurn = false;
       playerTurn = 0;
       print(playerTurn);//for code fixing
     }
     else if (playerTurn < playerCountries.length){
+      playerCountries[playerTurn].att === false;
       playerTurn += 1;
       endTurn = false;
       print(playerTurn);//for code fixing
