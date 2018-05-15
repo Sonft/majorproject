@@ -25,10 +25,10 @@ let map;
 let infantry;
 
 //Colonies of the player COUNTRIES
-let coloniesOfGreatBritain = [];
-let coloniesOfFrance = [];
-let coloniesOfSpain = [];
-let coloniesOfPortugal = [];
+// let coloniesOfGreatBritain = [];
+// let coloniesOfFrance = [];
+// let coloniesOfSpain = [];
+// let coloniesOfPortugal = [];
 //THE UNITS OF EACH GREAT POWER
 let unitsOfGreatBritain = [];
 let unitsOfFrance = [];
