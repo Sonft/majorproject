@@ -83,3 +83,24 @@ function createGrid(columns, rows) {
   }
   return randomGrid;
 }
+
+function createUnitGrid(columns, rows) {
+  let randomUnitGrid = [];
+  for (let x = 0; x < columns; x++) {
+    randomUnitGrid.push([]);
+    for (let y = 0; y < rows; y++) {
+      randomUnitGrid[x].push(0);
+    }
+  }
+  return randomUnitGrid;
+}
+
+function displayUnitGrid() {
+  for (let x = 0; x < columns; x++) {
+    for (let y = 0; y < rows; y++) {
+      
+      //actually makes the grid
+      rect(x * blockWidth, y * blockHeight, blockWidth, blockHeight);
+    }
+  }
+}

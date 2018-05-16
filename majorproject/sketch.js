@@ -20,9 +20,16 @@ let blockHeight;
 let columns = 54;
 let rows = 41;
 let map;
+let unitMap;
+
 
 //units! Bois
 let infantry;
+
+let spainUnit;
+let britainUnit;
+let portugalUnit;
+let franceUnit;
 
 //Colonies of the player COUNTRIES
 // let coloniesOfGreatBritain = [];
@@ -43,23 +50,20 @@ function setup() {
   createCanvas(windowWidth, windowHeight);
   document.documentElement.style.overflow = "hidden";
   //Creating a grid
+  portugalUnit = loadImage("images/portugal.PNG");
+  franceUnit = loadImage("images/france.PNG");
+  britainUnit = loadImage("images/britain.PNG");
+  spainUnit = loadImage("images/spain.PNG");
+
 
   blockWidth = windowWidth / columns;
   blockHeight = windowHeight / rows;
   map = createGrid(columns, rows);
+  unitMap = createUnitGrid(columns, rows);
   makeProvinceVariables();
 
   //THIS IS US CREATING THE PLAYER COUNTRIES AS A SEPERATE OBJECT THAT WILL INTERACT WITH THE HUD
   playerObjects();
-
-
-  // playerCountries.push(
-  //   playerGreatBritain,
-  //   playerFrance,
-  //   playerSpain,
-  //   playerPortugal
-  //
-  // );
 
   pushAllTheCountries();
 }
