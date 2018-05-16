@@ -5,7 +5,6 @@ function playerObjects() {
     "Great Britain",
     0,
     0,
-    coloniesOfGreatBritain,
     unitsOfGreatBritain,
     false
   );
@@ -14,7 +13,6 @@ function playerObjects() {
     "France",
     0,
     0,
-    coloniesOfFrance,
     unitsOfFrance,
     false
   );
@@ -23,7 +21,6 @@ function playerObjects() {
     "Spain",
     0,
     0,
-    coloniesOfSpain,
     unitsOfSpain,
     false
   );
@@ -32,7 +29,6 @@ function playerObjects() {
     "Portugal",
     0,
     0,
-    coloniesOfPortugal,
     unitsOfPortugal,
     false
   );
@@ -73,11 +69,10 @@ function askPlayerAmount() {
 }
 //THIS IS THE INFO FOR EVERY COUNTRY: HUD USES THIS, THE GAME WILL CHANGE THIS DEPENDING ON WHAT HAPPENS IN TURNS (IE. events, turn transitions,etc)
 class Player {
-  constructor(ownedBy, gold, resources, colonies, units,addedThisTurn) {
+  constructor(ownedBy, gold, resources, units,addedThisTurn) {
     this.o = ownedBy;
     this.g = gold;
     this.r = resources;
-    this.c = colonies;
     this.u = units;
     this.att = addedThisTurn;
   }
