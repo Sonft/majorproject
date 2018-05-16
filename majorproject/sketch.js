@@ -43,11 +43,11 @@ function setup() {
   createCanvas(windowWidth, windowHeight);
   document.documentElement.style.overflow = "hidden";
   //Creating a grid
-
   blockWidth = windowWidth / columns;
   blockHeight = windowHeight / rows;
   map = createGrid(columns, rows);
   makeProvinceVariables();
+  noStroke();
 
   //THIS IS US CREATING THE PLAYER COUNTRIES AS A SEPERATE OBJECT THAT WILL INTERACT WITH THE HUD
   playerObjects();
