@@ -13,13 +13,13 @@ class Infantry {
     this.u = movesUp;
     this.d = movesDown;
     this.di = movesDiagonal;
-    
+
   }
-  display(x, y, o) {
-    for (let x = this.x; x < columns; x++) {
-      for (let y = this.y; y < rows; y++) {
+  display(x, y, movesLeft, movesRight, movesDown, movesUp, movesDiagonal, o) {
+    for (let x = this.x; x <= this.x; x++) {
+      for (let y = this.y; y <= this.x; y++) {
         if (this.ownedBy === "France") {
-          unitsOfFrance.push();
+
         }
       }
     }

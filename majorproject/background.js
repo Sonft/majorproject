@@ -49,12 +49,13 @@ function backGroundTwo() {
   background(0, 0, 255);
   if (endTurn === false){
     displayGrid();
-    displayUnitGrid();
     makeEarthMap();
     playerTurnFunc(playerTurn);
     headsUpDisplay(playerCountries[playerTurn]);
   }
-
+  if (showUnitMap === true) {
+    displayUnitGrid();
+  }
   if (endTurn === true){
     if (playerTurn === playerCountries.length -1){
       playerCountries[playerTurn].att === false;
@@ -101,5 +102,11 @@ function backGroundThree() {
   //the exit button
   if (windowWidth > mouseX && windowWidth - 50 < mouseX && 50 > mouseY && 0 < mouseY && mouseIsPressed) {
     gameState = 1;
+  }
+}
+
+function keyTyped() {
+  if (keyIsPressed && (key === "m" || key === "M")) {
+    showUnitMap = !showUnitMap;
   }
 }
