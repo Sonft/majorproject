@@ -21,6 +21,7 @@ let columns = 54;
 let rows = 41;
 let map;
 let unitMap;
+let showUnitMap;
 
 
 //units! Bois
@@ -55,7 +56,7 @@ function setup() {
   franceUnit = loadImage("images/france.PNG");
   britainUnit = loadImage("images/britain.PNG");
   spainUnit = loadImage("images/spain.PNG");
-
+  showUnitMap = false;
 
   blockWidth = windowWidth / columns;
   blockHeight = windowHeight / rows;
@@ -66,11 +67,10 @@ function setup() {
 
   //THIS IS US CREATING THE PLAYER COUNTRIES AS A SEPERATE OBJECT THAT WILL INTERACT WITH THE HUD
   playerObjects();
-
   pushAllTheCountries();
 }
 //just calls other functions
 function draw() {
-
   checkState();
+
 }

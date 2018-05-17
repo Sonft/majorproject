@@ -54,7 +54,9 @@ function isClicked(x1, y1, x2, y2, countryName, gold, resources, isClicked, owne
 //THE DISPLAY FUNCTION USES THIS TOO
 //input coordinates and it tells you if the mouse is clicking inside of them
 function clickOnCountry(x1, y1, x2, y2) {
-  return x1 * blockWidth < mouseX && mouseX < x2 * blockWidth && y1 * blockHeight < mouseY && mouseY < y2 * blockHeight && mouseIsPressed;
+  if (showUnitMap === false) {
+    return x1 * blockWidth < mouseX && mouseX < x2 * blockWidth && y1 * blockHeight < mouseY && mouseY < y2 * blockHeight && mouseIsPressed;
+  }
 }
 
 
@@ -62,7 +64,7 @@ function clickOnCountry(x1, y1, x2, y2) {
 //THE DISPLAY FUNCTION USES THIS TOO ALSO
 //just checks if you moused over a thing
 function countryMousedOver(x1, y1, x2, y2) {
-  if (x1 * blockWidth < mouseX && mouseX < x2 * blockWidth && y1 * blockHeight < mouseY && mouseY < y2 * blockHeight) {
+  if (x1 * blockWidth < mouseX && mouseX < x2 * blockWidth && y1 * blockHeight < mouseY && mouseY < y2 * blockHeight && showUnitMap === false) {
     return true;
   }
 }
@@ -99,7 +101,9 @@ function displayUnitGrid() {
   for (let x = 0; x < columns; x++) {
     for (let y = 0; y < rows; y++) {
       
+
       //actually makes the grid
+      fill(255, 0);
       rect(x * blockWidth, y * blockHeight, blockWidth, blockHeight);
     }
   }
