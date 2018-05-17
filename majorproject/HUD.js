@@ -56,5 +56,5 @@ class PlayerHUDInfo {
 //This is a menu where countries can buy units
 
 function shopMenu() {
-  rect(0,0,windowWidth,windowHeight);
+
 }

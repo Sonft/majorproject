@@ -49,7 +49,7 @@ function backGroundTwo() {
   background(0, 0, 255);
   if (endTurn === false){
     displayGrid();
-    displayUnitGrid();
+    //displayUnitGrid();
     makeEarthMap();
     playerTurnFunc(playerTurn);
     headsUpDisplay(playerCountries[playerTurn]);

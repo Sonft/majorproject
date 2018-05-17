@@ -23,6 +23,7 @@ function mouseClicked(){
     playerCountries[playerTurn].att = false;
   }
   if( mouseX> windowWidth - (8 * blockWidth),mouseY > windowHeight - 3 * blockHeight,mouseX> windowWidth - (4 * blockWidth), mouseY <windowHeight){
+    isShopOpen = true;
     shopMenu();
   }
   let clickableThings = [];

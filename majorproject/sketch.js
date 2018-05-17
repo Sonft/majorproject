@@ -59,8 +59,8 @@ function setup() {
 
   blockWidth = windowWidth / columns;
   blockHeight = windowHeight / rows;
-  map = createGrid(columns, rows);
   unitMap = createUnitGrid(columns, rows);
+  map = createGrid(columns, rows);
   makeProvinceVariables();
   noStroke();
 
