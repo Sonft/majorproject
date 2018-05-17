@@ -50,15 +50,13 @@ function setup() {
   createCanvas(windowWidth, windowHeight);
   document.documentElement.style.overflow = "hidden";
   //Creating a grid
-<<<<<<< HEAD
-=======
+
   portugalUnit = loadImage("images/portugal.PNG");
   franceUnit = loadImage("images/france.PNG");
   britainUnit = loadImage("images/britain.PNG");
   spainUnit = loadImage("images/spain.PNG");
 
 
->>>>>>> 7b05e9fa34a19bdeb71cef4fdf7cf53aa17bba36
   blockWidth = windowWidth / columns;
   blockHeight = windowHeight / rows;
   map = createGrid(columns, rows);
