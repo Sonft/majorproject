@@ -22,7 +22,7 @@ let rows = 41;
 let map;
 let unitMap;
 let showUnitMap;
-
+let isShopOpen = false;
 
 //units! Bois
 let infantry;

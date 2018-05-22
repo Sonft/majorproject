@@ -18,12 +18,15 @@ function playerTurnFunc(playerTurn){
 
 //IM GONNA FIX THE PROBLEMS with clicking and it repeating the function for as long as you clicked it
 function mouseClicked(){
-  if (mouseX > windowWidth - 4*blockWidth && mouseY >  windowHeight - 3*blockHeight && endTurn === false) {
+  if (mouseX > windowWidth - 4*blockWidth && mouseY >  windowHeight - 3*blockHeight && endTurn === false&& isShopOpen === false) {
     endTurn = true;
     playerCountries[playerTurn].att = false;
   }
-  if( mouseX> windowWidth - (8 * blockWidth),mouseY > windowHeight - 3 * blockHeight,mouseX> windowWidth - (4 * blockWidth), mouseY <windowHeight){
-    shopMenu();
+  if( mouseX > windowWidth - (8 * blockWidth)&& mouseY > windowHeight - 3 * blockHeight&& mouseX< windowWidth - (4 * blockWidth)&&  mouseY <windowHeight && isShopOpen === false){
+    isShopOpen = true;
+  }
+  if(mouseX > windowWidth - (3* blockWidth) && mouseY>0 && mouseX < windowWidth && mouseY < (3*blockHeight) && isShopOpen === true){
+    isShopOpen = false;
   }
   let clickableThings = [];
 
