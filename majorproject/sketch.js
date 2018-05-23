@@ -32,6 +32,7 @@ let britainUnit;
 let portugalUnit;
 let franceUnit;
 
+let frenchUnit;
 //Colonies of the player COUNTRIES
 // let coloniesOfGreatBritain = [];
 // let coloniesOfFrance = [];
@@ -53,7 +54,7 @@ function setup() {
   //Creating a grid
 
   portugalUnit = loadImage("images/portugal.PNG");
-  franceUnit = loadImage("images/france.PNG");
+  franceUnit = loadImage("images/france.PNG"); 
   britainUnit = loadImage("images/britain.PNG");
   spainUnit = loadImage("images/spain.PNG");
   showUnitMap = false;

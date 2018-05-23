@@ -151,6 +151,8 @@ function makeProvinceVariables() {
   //Oceania
   indonesia = new Province("Indonesia", 47, 53, 26, 27, "No One", 0, 0, 0);
   australia = new Province("Australia", 47, 53, 31, 36, "No One", 0, 0, 0);
+
+  frenchUnit = new Infantry(5, 10, 50, "France", 0, 0, 0, 0, 0);
 }
 
 function pushAllTheCountries() {

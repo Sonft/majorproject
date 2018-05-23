@@ -100,7 +100,20 @@ function createUnitGrid(columns, rows) {
 function displayUnitGrid() {
   for (let x = 0; x < columns; x++) {
     for (let y = 0; y < rows; y++) {
-      
+      unitMap[2][2];
+      if (unitMap[x][y] === 2) {
+        image(britainUnit, 0, 0);
+      }
+      else if (unitMap[x][y] === 3) {
+        image(spainUnit, 0, 0);
+      }
+      else if (unitMap[x][y] === 4) {
+        image(franceUnit, 0, 0);
+        print("Displaying france image now...");
+      }
+      else if (unitMap[x][y] === 5) {
+        image(portugalUnit, 0, 0);
+      }
 
       //actually makes the grid
       fill(255, 0);
