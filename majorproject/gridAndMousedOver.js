@@ -100,19 +100,24 @@ function createUnitGrid(columns, rows) {
 function displayUnitGrid() {
   for (let x = 0; x < columns; x++) {
     for (let y = 0; y < rows; y++) {
-      unitMap[2][2];
       if (unitMap[x][y] === 2) {
-        image(britainUnit, 0, 0);
+        fill(255, 0, 0);
       }
       else if (unitMap[x][y] === 3) {
-        image(spainUnit, 0, 0);
+        fill(255, 204, 0);
       }
       else if (unitMap[x][y] === 4) {
-        image(franceUnit, 0, 0);
-        print("Displaying france image now...");
+        if (showUnitMap === true) {
+          tint(255, 255);
+          image(franceUnit, x, y, blockWidth, blockHeight);
+        }
+        else {
+          tint(255, 67);
+          image(franceUnit, x, y, blockWidth, blockHeight);
+        }
       }
       else if (unitMap[x][y] === 5) {
-        image(portugalUnit, 0, 0);
+        fill(0, 255, 0);
       }
 
       //actually makes the grid
