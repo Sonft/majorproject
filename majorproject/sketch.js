@@ -39,6 +39,7 @@ let frenchUnit;
 // let coloniesOfSpain = [];
 // let coloniesOfPortugal = [];
 //THE UNITS OF EACH GREAT POWER
+let masterListOfUnits = [];
 let unitsOfGreatBritain = [];
 let unitsOfFrance = [];
 let unitsOfSpain = [];
@@ -54,7 +55,7 @@ function setup() {
   //Creating a grid
 
   portugalUnit = loadImage("images/portugal.PNG");
-  franceUnit = loadImage("images/france.PNG"); 
+  franceUnit = loadImage("images/france.PNG");
   britainUnit = loadImage("images/britain.PNG");
   spainUnit = loadImage("images/spain.PNG");
   showUnitMap = false;
@@ -73,5 +74,4 @@ function setup() {
 //just calls other functions
 function draw() {
   checkState();
-
 }

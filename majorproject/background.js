@@ -50,12 +50,13 @@ function backGroundTwo() {
   if (endTurn === false){
     displayGrid();
     makeEarthMap();
+    displayUnitGrid();
     playerTurnFunc(playerTurn);
     headsUpDisplay(playerCountries[playerTurn]);
   }
-  if (showUnitMap === true) {
-    displayUnitGrid();
-  }
+  // if (showUnitMap === true) {
+  //   displayUnitGrid();
+  // }
   if (isShopOpen === true) {
     shopMenu();
   }

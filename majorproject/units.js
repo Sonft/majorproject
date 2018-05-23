@@ -27,7 +27,14 @@ class Infantry {
           unitMap[x][y] = 3;
         }
         else if (this.ownedBy === "France") {
-          unitMap[x][y] = 4;
+          if (showUnitMap === true) {
+            tint(255, 255);
+            image(franceUnit, x, y, blockWidth, blockHeight);
+          }
+          else {
+            tint(255, 67);
+            image(franceUnit, x, y, blockWidth, blockHeight);
+          }
         }
         else if (this.ownedBy === "Portugal") {
           unitMap[x][y] = 5;
