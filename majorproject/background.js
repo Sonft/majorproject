@@ -56,6 +56,9 @@ function backGroundTwo() {
   if (showUnitMap === true) {
     displayUnitGrid();
   }
+  if (isShopOpen === true) {
+    shopMenu();
+  }
   if (endTurn === true){
     if (playerTurn === playerCountries.length -1){
       playerCountries[playerTurn].att === false;
