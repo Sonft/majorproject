@@ -112,4 +112,12 @@ function keyTyped() {
   if (keyIsPressed && (key === "m" || key === "M")) {
     showUnitMap = !showUnitMap;
   }
+  if (isShopOpen === true && keyIspressed && (key === "U"|| key ==="u")){
+    if (playerturn === 0){
+      playerGreatBritain.g += -10;
+      playerGreatBritain.r += -10;
+      let englishUnit = new infantry(20, 22, 5, 8, movesLeft, movesRight, movesDown, movesUp);
+
+    }
+  }
 }
