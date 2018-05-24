@@ -1,9 +1,36 @@
+
+function displayUnits(){
+  for (let x = 0; x < playerGreatBritain.u.length; x++) {
+    unitsOfGreatBritain[x].display();
+  }
+  for (let y = 0; y < playerFrance.u.length; y++) {
+    unitsOfFrance[y].display();
+  }
+  for (let l = 0; l < playerSpain.u.length; l++) {
+    unitsOfSpain[l].display();
+  }
+  for (let g = 0; g < playerPortugal.u.length; g++) {
+    unitsOfPortugal[g].display();
+  }
+}
+
+
+
+
+
+
+
+
 // let right, left, up, down, diagonal
 // unit[x-1][y], unit[x+1][y],
 
 
+
+
+
+
 class Infantry {
-  constructor(x, y, h, o, movesLeft, movesRight, movesDown, movesUp, movesDiagonal) {
+  constructor(x, y, h, o, movesLeft, movesRight, movesDown, movesUp) {
     this.x = x;
     this.y = y;
     this.x1 = x+1;
@@ -14,10 +41,9 @@ class Infantry {
     this.r = movesRight;
     this.u = movesUp;
     this.d = movesDown;
-    this.di = movesDiagonal;
 
   }
-  display(x, y, movesLeft, movesRight, movesDown, movesUp, movesDiagonal, o) {
+  display(x, y, movesLeft, movesRight, movesDown, movesUp, o) {
     for (let x = this.x; x <= this.x1; x++) {
       for (let y = this.y; y <= this.y1; y++) {
         if (this.ownedBy === "Great Britain") {

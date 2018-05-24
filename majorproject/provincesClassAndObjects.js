@@ -71,8 +71,6 @@ function makeEarthMap() {
   //Oceania
   indonesia.display();
   australia.display();
-
-  frenchUnit.display();
 }
 
 

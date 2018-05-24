@@ -51,6 +51,7 @@ function backGroundTwo() {
     displayGrid();
     makeEarthMap();
     displayUnitGrid();
+    displayUnits();
     playerTurnFunc(playerTurn);
     headsUpDisplay(playerCountries[playerTurn]);
   }
@@ -113,12 +114,30 @@ function keyTyped() {
   if (keyIsPressed && (key === "m" || key === "M")) {
     showUnitMap = !showUnitMap;
   }
-  if (isShopOpen === true && keyIspressed && (key === "U"|| key ==="u")){
-    if (playerturn === 0){
+  if (isShopOpen === true && keyIsPressed && (key === "U"|| key ==="u")){
+    if (playerTurn === 0){
       playerGreatBritain.g += -10;
       playerGreatBritain.r += -10;
-      let englishUnit = new infantry(20, 22, 5, 8, movesLeft, movesRight, movesDown, movesUp);
-
+      let englishUnit = new Infantry(20, 22, 5, 8,  0, 0, 0, 0);
+      unitsOfGreatBritain.push(englishUnit);
+    }
+    if (playerTurn === 1){
+      playerFrance.g += -10;
+      playerFrance.r += -10;
+      let frenchUnit = new Infantry(22, 25, 9, 11, 0, 0, 0, 0);
+      unitsOfFrance.push(frenchUnit);
+    }
+    if (playerTurn === 2){
+      playerSpain.g += -10;
+      playerSpain.r += -10;
+      let spanishUnit = new Infantry(22, 24, 11, 13,  0, 0, 0, 0);
+      unitsOfSpain.push(spanishUnit);
+    }
+    if (playerTurn === 3){
+      playerPortugal.g += -10;
+      playerPortugal.r += -10;
+      let portugeseUnit = new Infantry(21, 22, 11, 13,  0, 0, 0, 0);
+      unitsOfPortugal.push(portugeseUnit);
     }
   }
 }
