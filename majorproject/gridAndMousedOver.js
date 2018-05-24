@@ -101,10 +101,24 @@ function displayUnitGrid() {
   for (let x = 0; x < columns; x++) {
     for (let y = 0; y < rows; y++) {
       if (unitMap[x][y] === 2) {
-        fill(255, 0, 0);
+        if (showUnitMap === true) {
+          tint(255, 255);
+          image(britainUnit, x, y, blockWidth, blockHeight);
+        }
+        else {
+          tint(255, 67);
+          image(britainUnit, x, y, blockWidth, blockHeight);
+        }
       }
       else if (unitMap[x][y] === 3) {
-        fill(255, 204, 0);
+        if (showUnitMap === true) {
+          tint(255, 255);
+          image(spainUnit, x, y, blockWidth, blockHeight);
+        }
+        else {
+          tint(255, 67);
+          image(spainUnit, x, y, blockWidth, blockHeight);
+        }
       }
       else if (unitMap[x][y] === 4) {
         if (showUnitMap === true) {
@@ -117,7 +131,14 @@ function displayUnitGrid() {
         }
       }
       else if (unitMap[x][y] === 5) {
-        fill(0, 255, 0);
+        if (showUnitMap === true) {
+          tint(255, 255);
+          image(portugalUnit, x, y, blockWidth, blockHeight);
+        }
+        else {
+          tint(255, 67);
+          image(portugalUnit, x, y, blockWidth, blockHeight);
+        }
       }
 
       //actually makes the grid

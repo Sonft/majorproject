@@ -1,18 +1,19 @@
 
 function displayUnits(){
-  for (let x = 0; x < playerGreatBritain.u.length; x++) {
+  for (let x = 0; x < unitsOfGreatBritain.length; x++) {
     unitsOfGreatBritain[x].display();
   }
-  for (let y = 0; y < playerFrance.u.length; y++) {
+  for (let y = 0; y < unitsOfFrance.length; y++) {
     unitsOfFrance[y].display();
   }
-  for (let l = 0; l < playerSpain.u.length; l++) {
+  for (let l = 0; l < unitsOfSpain.length; l++) {
     unitsOfSpain[l].display();
   }
-  for (let g = 0; g < playerPortugal.u.length; g++) {
+  for (let g = 0; g < unitsOfPortugal.length; g++) {
     unitsOfPortugal[g].display();
   }
 }
+
 
 
 
@@ -44,26 +45,51 @@ class Infantry {
 
   }
   display(x, y, movesLeft, movesRight, movesDown, movesUp, o) {
-    for (let x = this.x; x <= this.x1; x++) {
-      for (let y = this.y; y <= this.y1; y++) {
+    for (let x = this.x; x <= this.x; x++) {
+      for (let y = this.y; y <= this.y; y++) {
         if (this.ownedBy === "Great Britain") {
           unitMap[x][y] = 2;
-        }
-        else if (this.ownedBy === "Spain") {
-          unitMap[x][y] = 3;
-        }
-        else if (this.ownedBy === "France") {
           if (showUnitMap === true) {
             tint(255, 255);
-            image(franceUnit, x, y, blockWidth, blockHeight);
+            image(britainUnit, x * blockWidth, y *blockHeight, blockWidth, blockHeight);
           }
           else {
             tint(255, 67);
-            image(franceUnit, x, y, blockWidth, blockHeight);
+            image(britainUnit, x *blockWidth, y * blockHeight, blockWidth, blockHeight);
+          }
+        }
+        else if (this.ownedBy === "Spain") {
+          unitMap[x][y] = 3;
+          if (showUnitMap === true) {
+            tint(255, 255);
+            image(spainUnit, x *blockWidth, y *blockHeight, blockWidth, blockHeight);
+          }
+          else {
+            tint(255, 67);
+            image(spainUnit, x *blockWidth, y*blockHeight, blockWidth, blockHeight);
+          }
+        }
+        else if (this.ownedBy === "France") {
+          unitMap[x][y] = 4;
+          if (showUnitMap === true) {
+            tint(255, 255);
+            image(franceUnit, x *blockWidth, y *blockHeight, blockWidth, blockHeight);
+          }
+          else {
+            tint(255, 67);
+            image(franceUnit, x *blockWidth, y *blockHeight, blockWidth, blockHeight);
           }
         }
         else if (this.ownedBy === "Portugal") {
           unitMap[x][y] = 5;
+          if (showUnitMap === true) {
+            tint(255, 255);
+            image(portugalUnit, x *blockWidth, y *blockHeight, blockWidth, blockHeight);
+          }
+          else {
+            tint(255, 67);
+            image(portugalUnit, x *blockWidth, y *blockHeight, blockWidth, blockHeight);
+          }
         }
       }
     }
