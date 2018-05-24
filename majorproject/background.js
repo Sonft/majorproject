@@ -124,13 +124,13 @@ function keyTyped() {
     if (playerTurn === 1){
       playerFrance.g += -10;
       playerFrance.r += -10;
-      let frenchUnit = new Infantry(22, 25, 9, 11, 0, 0, 0, 0);
+      let frenchUnit = new Infantry(0, 0, 0, 0, 0, 0, 0, 0);
       unitsOfFrance.push(frenchUnit);
     }
     if (playerTurn === 2){
       playerSpain.g += -10;
       playerSpain.r += -10;
-      let spanishUnit = new Infantry(22, 24, 11, 13,  0, 0, 0, 0);
+      let spanishUnit = new Infantry(0, 0, 0, 0,  0, 0, 0, 0);
       unitsOfSpain.push(spanishUnit);
     }
     if (playerTurn === 3){
