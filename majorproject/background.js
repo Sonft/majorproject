@@ -68,6 +68,7 @@ function backGroundTwo() {
       if (playerTurn === 1){
         for (let y = 0; y < unitsOfFrance.length; y++) {
           unitsOfFrance[y].moveThisUnit();
+          print(111);
         }
         canMoveUnits = false;
       }
