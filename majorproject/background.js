@@ -54,6 +54,36 @@ function backGroundTwo() {
     displayUnits();
     playerTurnFunc(playerTurn);
     headsUpDisplay(playerCountries[playerTurn]);
+
+
+
+    //Move units across map
+    if (canMoveUnits === true){
+      if (playerTurn === 0){
+        for (let x = 0; x < unitsOfGreatBritain.length; x++) {
+          unitsOfGreatBritain[x].moveThisUnit();
+        }
+        canMoveUnits = false;
+      }
+      if (playerTurn === 1){
+        for (let y = 0; y < unitsOfFrance.length; y++) {
+          unitsOfFrance[y].moveThisUnit();
+        }
+        canMoveUnits = false;
+      }
+      if (playerTurn === 2){
+        for (let g = 0; g < unitsOfSpain.length; g++) {
+          unitsOfSpain[g].moveThisUnit();
+        }
+        canMoveUnits = false;
+      }
+      if (playerTurn === 3){
+        for (let g = 0; g < unitsOfPortugal.length; g++) {
+          unitsOfPortugal[g].moveThisUnit();
+        }
+        canMoveUnits = false;
+      }
+    }
   }
   // if (showUnitMap === true) {
   //   displayUnitGrid();
@@ -66,12 +96,14 @@ function backGroundTwo() {
       playerCountries[playerTurn].att === false;
       endTurn = false;
       playerTurn = 0;
+      canMoveUnits = true;
       print(playerTurn);//for code fixing
     }
     else if (playerTurn < playerCountries.length){
       playerCountries[playerTurn].att === false;
       playerTurn += 1;
       endTurn = false;
+      canMoveUnits = true;
       print(playerTurn);//for code fixing
     }
   }

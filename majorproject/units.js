@@ -95,6 +95,29 @@ class Infantry {
         }
       }
     }
-
+  }
+  moveThisUnit(moveLimit) {
+    for(let x = 0; x< moveLimit; x++){
+      //right arrowkey
+      if (keyIsPressed && (keyCode === 39)){
+        this.x += 1;
+      }
+      //left arrowkey
+      if (keyIsPressed && (keyCode === 39)){
+        this.x += -1;
+      }
+      //upArrowKey
+      if (keyIsPressed && (keyCode === 38)){
+        this.y += -1;
+      }
+      //down arrowkey
+      if (keyIsPressed && (keyCode === 40)){
+        this.x += 1;
+      }
+      //Enter to end turn of unit
+      if (keyIsPressed && (keyCode === 13)){
+        x = moveLimit;
+      }
+    }
   }
 }
