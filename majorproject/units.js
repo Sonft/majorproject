@@ -31,7 +31,7 @@ function displayUnits(){
 
 
 class Infantry {
-  constructor(x, y, h, o, movesLeft, movesRight, movesDown, movesUp) {
+  constructor(x, y, h, o, movesLeft, movesRight, movesDown, movesUp, moveLimit, strength) {
     this.x = x;
     this.y = y;
     this.x1 = x+1;
@@ -42,6 +42,8 @@ class Infantry {
     this.r = movesRight;
     this.u = movesUp;
     this.d = movesDown;
+    this.m = moveLimit;
+    this.s = strength;
 
   }
   display(x, y, movesLeft, movesRight, movesDown, movesUp, o) {
