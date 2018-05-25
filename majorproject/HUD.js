@@ -18,7 +18,6 @@ function headsUpDisplay(playerCountry) {
   else if (playerCountries[playerTurn].o === "Spain") {
     fill("yellow");
     rect(0, windowHeight - 3 * blockHeight, windowWidth, windowHeight);
-
   }
 
 
@@ -60,4 +59,6 @@ function shopMenu() {
   rect(0,0,width,height);
   fill(255,0,0);
   rect(windowWidth - 3* blockWidth,0,3* blockWidth,3*blockHeight);
+
+
 }

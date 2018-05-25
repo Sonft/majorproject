@@ -36,7 +36,7 @@ function displayGrid() {
 //DISPLAY FUNCTION USES THIS
 //countries call on this to see if they are being clicked
 function isClicked(x1, y1, x2, y2, countryName, gold, resources, isClicked, ownedBy) {
-  if (isClicked === 1) {
+  if (isClicked === 1 && showUnitMap === false && isShopOpen === false) {
     fill(255);
     rect(windowWidth / 2 - 100, windowHeight / 2 - 100, 210, 210);
     fill(0);
@@ -54,7 +54,7 @@ function isClicked(x1, y1, x2, y2, countryName, gold, resources, isClicked, owne
 //THE DISPLAY FUNCTION USES THIS TOO
 //input coordinates and it tells you if the mouse is clicking inside of them
 function clickOnCountry(x1, y1, x2, y2) {
-  if (showUnitMap === false) {
+  if (showUnitMap === false || isShopOpen === false) {
     return x1 * blockWidth < mouseX && mouseX < x2 * blockWidth && y1 * blockHeight < mouseY && mouseY < y2 * blockHeight && mouseIsPressed;
   }
 }
