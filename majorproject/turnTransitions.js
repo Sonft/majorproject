@@ -24,6 +24,7 @@ function mouseClicked(){
   }
   if( mouseX > windowWidth - (8 * blockWidth)&& mouseY > windowHeight - 3 * blockHeight&& mouseX< windowWidth - (4 * blockWidth)&&  mouseY <windowHeight && isShopOpen === false){
     isShopOpen = true;
+
   }
   if(mouseX > windowWidth - (3* blockWidth) && mouseY>0 && mouseX < windowWidth && mouseY < (3*blockHeight) && isShopOpen === true){
     isShopOpen = false;
