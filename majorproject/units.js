@@ -16,6 +16,21 @@ function displayUnits(){
 
 
 
+function refreshABunchOfUnits(){
+  for (let x = 0; x < unitsOfGreatBritain.length; x++) {
+    unitsOfGreatBritain[x].refreshUnit();
+  }
+  for (let y = 0; y < unitsOfFrance.length; y++) {
+    unitsOfFrance[y].refreshUnit();
+  }
+  for (let l = 0; l < unitsOfSpain.length; l++) {
+    unitsOfSpain[l].refreshUnit();
+  }
+  for (let g = 0; g < unitsOfPortugal.length; g++) {
+    unitsOfPortugal[g].refreshUnit();
+  }
+}
+
 
 
 
@@ -31,7 +46,7 @@ function displayUnits(){
 
 
 class Infantry {
-  constructor(x, y, h, o, movesLeft, movesRight, movesDown, movesUp, moveLimit, strength) {
+  constructor(x, y, h, o, movesLeft, movesRight, movesDown, movesUp, moveLimit,maxMoves, strength) {
     this.x = x;
     this.y = y;
     this.x1 = x+1;
@@ -43,6 +58,7 @@ class Infantry {
     this.u = movesUp;
     this.d = movesDown;
     this.m = moveLimit;
+    this.max = maxMoves;
     this.s = strength;
 
   }
@@ -97,27 +113,33 @@ class Infantry {
     }
   }
   moveThisUnit(moveLimit) {
-    for(let x = 0; x< moveLimit; x++){
-      //right arrowkey
-      if (keyIsPressed && (keyCode === 39)){
-        this.x += 1;
-      }
-      //left arrowkey
-      if (keyIsPressed && (keyCode === 39)){
-        this.x += -1;
-      }
-      //upArrowKey
-      if (keyIsPressed && (keyCode === 38)){
-        this.y += -1;
-      }
-      //down arrowkey
-      if (keyIsPressed && (keyCode === 40)){
-        this.x += 1;
-      }
-      //Enter to end turn of unit
-      if (keyIsPressed && (keyCode === 13)){
-        x = moveLimit;
-      }
+    if (keyIsPressed && (keyCode === 39) && this.m > 0){
+      this.x += 1;
+      this.m += -1;
+    }
+    //left arrowkey
+    if (keyIsPressed && (keyCode === 37) && this.m > 0){
+      this.x += -1;
+      this.m += -1;
+    }
+    //upArrowKey
+    if (keyIsPressed && (keyCode === 38) && this.m > 0){
+      this.y += -1;
+      this.m += -1;
+    }
+    //down arrowkey
+    if (keyIsPressed && (keyCode === 40) && this.m > 0){
+      this.y += 1;
+      this.m += -1;
+    }
+    //Enter to end turn of unit
+    if (keyIsPressed && (keyCode === 13) && this.m > 0){
+      this.m = 0;
+    }
+  }
+  refreshUnit(){
+    if (this.m < this.max && endTurn === true){
+      this.m = this.max;
     }
   }
 }
