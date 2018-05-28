@@ -58,31 +58,26 @@ function backGroundTwo() {
 
 
     //Move units across map
-    if (canMoveUnits === true){
-      if (playerTurn === 0){
-        for (let x = 0; x < unitsOfGreatBritain.length; x++) {
-          unitsOfGreatBritain[x].moveThisUnit();
-        }
-        canMoveUnits = false;
+
+    if (playerTurn === 0){
+      for (let x = 0; x < unitsOfGreatBritain.length; x++) {
+        unitsOfGreatBritain[x].moveThisUnit();
       }
-      if (playerTurn === 1){
-        for (let y = 0; y < unitsOfFrance.length; y++) {
-          unitsOfFrance[y].moveThisUnit();
-          print(111);
-        }
-        canMoveUnits = false;
+    }
+    if (playerTurn === 1){
+      for (let y = 0; y < unitsOfFrance.length; y++) {
+        unitsOfFrance[y].moveThisUnit();
+        print(111);
       }
-      if (playerTurn === 2){
-        for (let g = 0; g < unitsOfSpain.length; g++) {
-          unitsOfSpain[g].moveThisUnit();
-        }
-        canMoveUnits = false;
+    }
+    if (playerTurn === 2){
+      for (let g = 0; g < unitsOfSpain.length; g++) {
+        unitsOfSpain[g].moveThisUnit();
       }
-      if (playerTurn === 3){
-        for (let g = 0; g < unitsOfPortugal.length; g++) {
-          unitsOfPortugal[g].moveThisUnit();
-        }
-        canMoveUnits = false;
+    }
+    if (playerTurn === 3){
+      for (let g = 0; g < unitsOfPortugal.length; g++) {
+        unitsOfPortugal[g].moveThisUnit();
       }
     }
   }
@@ -95,17 +90,18 @@ function backGroundTwo() {
   if (endTurn === true){
     if (playerTurn === playerCountries.length -1){
       playerCountries[playerTurn].att === false;
-      endTurn = false;
       playerTurn = 0;
-      canMoveUnits = true;
+      refreshABunchOfUnits();
       print(playerTurn);//for code fixing
+      endTurn = false;
     }
     else if (playerTurn < playerCountries.length){
       playerCountries[playerTurn].att === false;
       playerTurn += 1;
-      endTurn = false;
-      canMoveUnits = true;
+
+      refreshABunchOfUnits();
       print(playerTurn);//for code fixing
+      endTurn = false;
     }
   }
 }
@@ -152,7 +148,7 @@ function keyTyped() {
       if (playerGreatBritain.g >= 10 && playerGreatBritain.r >= 10 && unitMap[greatBritain.x][greatBritain.y]=== 0) {
         playerGreatBritain.g += -10;
         playerGreatBritain.r += -10;
-        let englishUnit = new Infantry(greatBritain.x, greatBritain.y, 50, "Great Britain",  0, 0, 0, 0, 3, 4);
+        let englishUnit = new Infantry(greatBritain.x, greatBritain.y, 50, "Great Britain",  0, 0, 0, 0, 3,3, 4);
         unitsOfGreatBritain.push(englishUnit);
       }
     }
@@ -160,7 +156,7 @@ function keyTyped() {
       if (playerFrance.g >= 10 && playerFrance.r >= 10 && unitMap[france.x][france.y]=== 0) {
         playerFrance.g += -10;
         playerFrance.r += -10;
-        let frenchUnit = new Infantry(france.x , france.y, 50, "France", 0, 0, 0, 0, 3, 4);
+        let frenchUnit = new Infantry(france.x , france.y, 50, "France", 0, 0, 0, 0, 3,3, 4);
         unitsOfFrance.push(frenchUnit);
       }
     }
@@ -168,7 +164,7 @@ function keyTyped() {
       if (playerSpain.g >= 10 && playerSpain.r >= 10 && unitMap[spain.x][spain.y]=== 0) {
         playerSpain.g += -10;
         playerSpain.r += -10;
-        let spanishUnit = new Infantry(spain.x, spain.y, 50, "Spain", 0, 0, 0, 0, 3, 4);
+        let spanishUnit = new Infantry(spain.x, spain.y, 50, "Spain", 0, 0, 0, 0, 3,3, 4);
         unitsOfSpain.push(spanishUnit);
       }
 
@@ -177,7 +173,7 @@ function keyTyped() {
       if (playerPortugal.g >= 10 && playerPortugal.r >= 10 && unitMap[portugal.x][portugal.y]=== 0) {
         playerPortugal.g += -10;
         playerPortugal.r += -10;
-        let portugeseUnit = new Infantry(portugal.x, portugal.y, 50, "Portugal",  0, 0, 0, 0, 3, 4);
+        let portugeseUnit = new Infantry(portugal.x, portugal.y, 50, "Portugal",  0, 0, 0, 0, 3,3, 4);
         unitsOfPortugal.push(portugeseUnit);
       }
     }
