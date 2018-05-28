@@ -103,41 +103,41 @@ function displayUnitGrid() {
       if (unitMap[x][y] === 2) {
         if (showUnitMap === true) {
           tint(255, 255);
-          image(britainUnit, x, y, blockWidth, blockHeight);
+          image(britainUnit, x *blockWidth, y * blockHeight, blockWidth, blockHeight);
         }
         else {
           tint(255, 67);
-          image(britainUnit, x, y, blockWidth, blockHeight);
+          image(britainUnit, x * blockWidth, y *blockHeight, blockWidth, blockHeight);
         }
       }
       else if (unitMap[x][y] === 3) {
         if (showUnitMap === true) {
           tint(255, 255);
-          image(spainUnit, x, y, blockWidth, blockHeight);
+          image(spainUnit, x * blockWidth, y *blockHeight, blockWidth, blockHeight);
         }
         else {
           tint(255, 67);
-          image(spainUnit, x, y, blockWidth, blockHeight);
+          image(spainUnit, x * blockWidth, y *blockHeight, blockWidth, blockHeight);
         }
       }
       else if (unitMap[x][y] === 4) {
         if (showUnitMap === true) {
           tint(255, 255);
-          image(franceUnit, x, y, blockWidth, blockHeight);
+          image(franceUnit, x * blockWidth, y *blockHeight, blockWidth, blockHeight);
         }
         else {
           tint(255, 67);
-          image(franceUnit, x, y, blockWidth, blockHeight);
+          image(franceUnit, x * blockWidth, y *blockHeight, blockWidth, blockHeight);
         }
       }
       else if (unitMap[x][y] === 5) {
         if (showUnitMap === true) {
           tint(255, 255);
-          image(portugalUnit, x, y, blockWidth, blockHeight);
+          image(portugalUnit, x * blockWidth, y *blockHeight, blockWidth, blockHeight);
         }
         else {
           tint(255, 67);
-          image(portugalUnit, x, y, blockWidth, blockHeight);
+          image(portugalUnit, x * blockWidth, y *blockHeight, blockWidth, blockHeight);
         }
       }
 

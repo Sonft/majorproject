@@ -4,18 +4,15 @@ function headsUpDisplay(playerCountry) {
     fill("red");
     rect(0, windowHeight - 3 * blockHeight, windowWidth, windowHeight);
 
-  }
-  else if (playerCountries[playerTurn].o === "France") {
+  } else if (playerCountries[playerTurn].o === "France") {
     fill("blue");
     rect(0, windowHeight - 3 * blockHeight, windowWidth, windowHeight);
 
-  }
-  else if (playerCountries[playerTurn].o === "Portugal") {
+  } else if (playerCountries[playerTurn].o === "Portugal") {
     fill("green");
     rect(0, windowHeight - 3 * blockHeight, windowWidth, windowHeight);
 
-  }
-  else if (playerCountries[playerTurn].o === "Spain") {
+  } else if (playerCountries[playerTurn].o === "Spain") {
     fill("yellow");
     rect(0, windowHeight - 3 * blockHeight, windowWidth, windowHeight);
   }
@@ -32,7 +29,7 @@ function headsUpDisplay(playerCountry) {
 
   //SHOP BUTTON
   fill(255);
-  rect(windowWidth - (8 * blockWidth), windowHeight - 3 * blockHeight,4 * blockWidth, 3*blockHeight);
+  rect(windowWidth - (8 * blockWidth), windowHeight - 3 * blockHeight, 4 * blockWidth, 3 * blockHeight);
   fill(0);
   textSize(20);
   text("Shop", windowWidth - 8 * blockWidth, windowHeight - 3 * blockHeight, windowWidth - 4 * blockWidth, windowHeight);
@@ -55,10 +52,11 @@ class PlayerHUDInfo {
 //This is a menu where countries can buy units
 
 function shopMenu() {
-  fill(0,200,144);
-  rect(0,0,width,height);
-  fill(255,0,0);
-  rect(windowWidth - 3* blockWidth,0,3* blockWidth,3*blockHeight);
-
+  fill(0, 200, 144);
+  rect(0, 0, width, height);
+  fill(255, 0, 0);
+  rect(windowWidth - 3 * blockWidth, 0, 3 * blockWidth, 3 * blockHeight);
+  fill(255);
+  rect(windowWidth / 2, windowHeight / 2, windowWidth / 3, windowWidth / 3);
 
 }
