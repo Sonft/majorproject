@@ -1,3 +1,5 @@
+let movementIterator = false;
+
 
 function displayUnits(){
   for (let x = 0; x < unitsOfGreatBritain.length; x++) {
@@ -113,29 +115,38 @@ class Infantry {
     }
   }
   moveThisUnit(moveLimit) {
-    if (keyIsPressed && (keyCode === 39) && this.m > 0){
+    if ((keyCode === 39) && this.m > 0 && movementIterator === true){
       this.x += 1;
       this.m += -1;
+      movementIterator = false;
+      print('big goof');
     }
     //left arrowkey
-    if (keyIsPressed && (keyCode === 37) && this.m > 0){
+    if ( (keyCode === 37) && this.m > 0 && movementIterator === true){
       this.x += -1;
       this.m += -1;
+      movementIterator = false;
+      print('big goof');
     }
     //upArrowKey
-    if (keyIsPressed && (keyCode === 38) && this.m > 0){
+    if ((keyCode === 38) && this.m > 0 && movementIterator === true){
       this.y += -1;
       this.m += -1;
+      movementIterator = false;
+      print('big goof');
     }
     //down arrowkey
-    if (keyIsPressed && (keyCode === 40) && this.m > 0){
+    if ((keyCode === 40) && this.m > 0 && movementIterator === true){
       this.y += 1;
       this.m += -1;
+      movementIterator = false;
+      print('big goof');
     }
     //Enter to end turn of unit
     if (keyIsPressed && (keyCode === 13) && this.m > 0){
       this.m = 0;
     }
+
   }
   refreshUnit(){
     if (this.m < this.max && endTurn === true){

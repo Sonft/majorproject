@@ -48,6 +48,7 @@ function backGroundOne() {
 function backGroundTwo() {
   background(0, 0, 255);
   if (endTurn === false){
+    unitMap = createUnitGrid(columns, rows);
     displayGrid();
     makeEarthMap();
     displayUnitGrid();
@@ -56,8 +57,6 @@ function backGroundTwo() {
     headsUpDisplay(playerCountries[playerTurn]);
 
 
-
-    //Move units across map
 
     if (playerTurn === 0){
       for (let x = 0; x < unitsOfGreatBritain.length; x++) {
@@ -80,6 +79,10 @@ function backGroundTwo() {
         unitsOfPortugal[g].moveThisUnit();
       }
     }
+
+    //Move units across map
+
+
   }
   // if (showUnitMap === true) {
   //   displayUnitGrid();
@@ -143,6 +146,7 @@ function keyTyped() {
   if (keyIsPressed && (key === "m" || key === "M")) {
     showUnitMap = !showUnitMap;
   }
+  //THIS IS FOR THE SHOP
   if (isShopOpen === true && keyIsPressed && (key === "U"|| key ==="u")){
     if (playerTurn === 0){
       if (playerGreatBritain.g >= 10 && playerGreatBritain.r >= 10 && unitMap[greatBritain.x][greatBritain.y]=== 0) {
@@ -178,4 +182,10 @@ function keyTyped() {
       }
     }
   }
+  //Try with WASD
+  if (keyIsPressed && (keyCode === 40 || keyCode === 39 ||keyCode === 38 ||keyCode === 37 )){
+    movementIterator = true;
+    print('big yoof');
+  }
+
 }
