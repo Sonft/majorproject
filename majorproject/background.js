@@ -50,6 +50,7 @@ function backGroundTwo() {
   if (endTurn === false){
     displayGrid();
     makeEarthMap();
+    unitMap = createUnitGrid(columns, rows);
     displayUnitGrid();
     displayUnits();
     playerTurnFunc(playerTurn);
@@ -67,7 +68,6 @@ function backGroundTwo() {
     if (playerTurn === 1){
       for (let y = 0; y < unitsOfFrance.length; y++) {
         unitsOfFrance[y].moveThisUnit();
-        print(111);
       }
     }
     if (playerTurn === 2){

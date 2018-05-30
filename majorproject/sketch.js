@@ -70,6 +70,14 @@ function setup() {
   //THIS IS US CREATING THE PLAYER COUNTRIES AS A SEPERATE OBJECT THAT WILL INTERACT WITH THE HUD
   playerObjects();
   pushAllTheCountries();
+  playerFrance.r = playerFrance.r + 10;
+  playerFrance.g = playerFrance.g + 10;
+  playerGreatBritain.r = playerGreatBritain.r + 10;
+  playerGreatBritain.g = playerGreatBritain.g + 10;
+  playerPortugal.r = playerPortugal.r + 10;
+  playerPortugal.g = playerPortugal.g + 10;
+  playerSpain.r = playerSpain.r + 10;
+  playerSpain.g = playerSpain.g + 10;
 }
 //just calls other functions
 function draw() {

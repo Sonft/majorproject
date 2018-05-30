@@ -107,10 +107,10 @@ function makeProvinceVariables() {
   laPlata = new Province("La Plata", 10, 12, 26, 33, "No One", 0, 0, 0);
   uruguay = new Province("Uruguay", 12, 15, 26, 29, "No One", 0, 0, 0);
   //Western Europe
-  greatBritain = new Province("Great Britain", 20, 22, 5, 8, "Great Britain", 0, 0, 0);
-  france = new Province("France", 22, 25, 9, 11, "France", 0, 0, 0);
-  portugal = new Province("Portugal", 21, 22, 11, 13, "Portugal", 0, 0, 0);
-  spain = new Province("Spain", 22, 24, 11, 13, "Spain", 0, 0, 0);
+  greatBritain = new Province("Great Britain", 20, 22, 5, 8, "Great Britain", 5, 5, 0);
+  france = new Province("France", 22, 25, 9, 11, "France", 5, 5, 0);
+  portugal = new Province("Portugal", 21, 22, 11, 13, "Portugal", 5, 5, 0);
+  spain = new Province("Spain", 22, 24, 11, 13, "Spain", 5, 5, 0);
   //Rest of Europe
   restOfEurope = new Province("the Rest Of Europe", 25, 32, 8, 12, "Uncolonizable Men", 0, 0, 0);
   italy = new Province("Italy", 27, 29, 12, 14, "Uncolonizable Men", 0, 0, 0);

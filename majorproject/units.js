@@ -114,8 +114,19 @@ class Infantry {
   }
   moveThisUnit(moveLimit) {
     if (keyIsPressed && (keyCode === 39) && this.m > 0){
-      this.x += 1;
-      this.m += -1;
+      if (unitMap[this.x][this.y] === 4)  {
+        if (unitMap[this.x+1][this.y] === 2) {
+          for (let i = 0; i < unitsOfGreatBritain.length; i++) {
+            if (unitsOfGreatBritain[i].x === this.x+1 && unitsOfGreatBritain[i].y === this.y) {
+              let damage = ceil(random(0,6));
+
+              unitsOfGreatBritain[i].health = unitsOfGreatBritain[i].health - damage;
+              this.x += 1;
+              this.m += -1;
+            }
+          }
+        }
+      }
     }
     //left arrowkey
     if (keyIsPressed && (keyCode === 37) && this.m > 0){
@@ -142,4 +153,5 @@ class Infantry {
       this.m = this.max;
     }
   }
+
 }
