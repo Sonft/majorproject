@@ -29,7 +29,25 @@ function mouseClicked(){
   if(mouseX > windowWidth - (3* blockWidth) && mouseY>0 && mouseX < windowWidth && mouseY < (3*blockHeight) && isShopOpen === true){
     isShopOpen = false;
   }
-  let clickableThings = [];
-
-
+  
+  if (endTurn === false && isShopOpen === false && playerTurn === 0){
+    for(let x = 0; x < unitsOfGreatBritain.length; x++){
+      unitsOfGreatBritain[x].selectThisUnit();
+    }
+  }
+  if (endTurn === false && isShopOpen === false && playerTurn === 1){
+    for(let x = 0; x < unitsOfFrance.length; x++){
+      unitsOfFrance[x].selectThisUnit();
+    }
+  }
+  if (endTurn === false && isShopOpen === false && playerTurn === 2){
+    for(let x = 0; x < unitsOfSpain.length; x++){
+      unitsOfSpain[x].selectThisUnit();
+    }
+  }
+  if (endTurn === false && isShopOpen === false && playerTurn === 3){
+    for(let x = 0; x < unitsOfPortugal.length; x++){
+      unitsOfPortugal[x].selectThisUnit();
+    }
+  }
 }

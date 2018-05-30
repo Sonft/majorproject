@@ -48,7 +48,7 @@ function refreshABunchOfUnits(){
 
 
 class Infantry {
-  constructor(x, y, h, o, movesLeft, movesRight, movesDown, movesUp, moveLimit,maxMoves, strength) {
+  constructor(x, y, h, o, movesLeft, movesRight, movesDown, movesUp, moveLimit,maxMoves, strength, isSelected) {
     this.x = x;
     this.y = y;
     this.x1 = x+1;
@@ -62,6 +62,7 @@ class Infantry {
     this.m = moveLimit;
     this.max = maxMoves;
     this.s = strength;
+    this.isSelected = isSelected;
 
   }
   display(x, y, movesLeft, movesRight, movesDown, movesUp, o) {
@@ -69,9 +70,13 @@ class Infantry {
       for (let y = this.y; y <= this.y; y++) {
         if (this.ownedBy === "Great Britain") {
           unitMap[x][y] = 2;
-          if (showUnitMap === true) {
+          if (showUnitMap === true&& this.isSelected === 1) {
             tint(255, 255);
             image(britainUnit, x * blockWidth, y *blockHeight, blockWidth, blockHeight);
+          }
+          else if (showUnitMap === true){
+            tint("grey");
+            image(franceUnit, x *blockWidth, y *blockHeight, blockWidth, blockHeight);
           }
           else {
             tint(255, 67);
@@ -80,9 +85,13 @@ class Infantry {
         }
         else if (this.ownedBy === "Spain") {
           unitMap[x][y] = 3;
-          if (showUnitMap === true) {
+          if (showUnitMap === true && this.isSelected === 1) {
             tint(255, 255);
             image(spainUnit, x *blockWidth, y *blockHeight, blockWidth, blockHeight);
+          }
+          else if (showUnitMap === true){
+            tint("grey");
+            image(franceUnit, x *blockWidth, y *blockHeight, blockWidth, blockHeight);
           }
           else {
             tint(255, 67);
@@ -91,8 +100,12 @@ class Infantry {
         }
         else if (this.ownedBy === "France") {
           unitMap[x][y] = 4;
-          if (showUnitMap === true) {
+          if (showUnitMap === true && this.isSelected === 1) {
             tint(255, 255);
+            image(franceUnit, x *blockWidth, y *blockHeight, blockWidth, blockHeight);
+          }
+          else if (showUnitMap === true){
+            tint("grey");
             image(franceUnit, x *blockWidth, y *blockHeight, blockWidth, blockHeight);
           }
           else {
@@ -102,9 +115,13 @@ class Infantry {
         }
         else if (this.ownedBy === "Portugal") {
           unitMap[x][y] = 5;
-          if (showUnitMap === true) {
+          if (showUnitMap === true && this.isSelected === 1) {
             tint(255, 255);
             image(portugalUnit, x *blockWidth, y *blockHeight, blockWidth, blockHeight);
+          }
+          else if (showUnitMap === true){
+            tint("grey");
+            image(franceUnit, x *blockWidth, y *blockHeight, blockWidth, blockHeight);
           }
           else {
             tint(255, 67);
@@ -114,36 +131,39 @@ class Infantry {
       }
     }
   }
+
+
+
   moveThisUnit(moveLimit) {
-    if ((keyCode === 39) && this.m > 0 && movementIterator === true){
+    if ((key === "d"|| key === "D") && this.m > 0 && movementIterator === true && this.isSelected === 1){
       this.x += 1;
       this.m += -1;
       movementIterator = false;
       print('big goof');
     }
     //left arrowkey
-    if ( (keyCode === 37) && this.m > 0 && movementIterator === true){
+    if ( (key === "a"|| key === "A") && this.m > 0 && movementIterator === true && this.isSelected === 1){
       this.x += -1;
       this.m += -1;
       movementIterator = false;
       print('big goof');
     }
     //upArrowKey
-    if ((keyCode === 38) && this.m > 0 && movementIterator === true){
+    if ((key === "W"|| key === "w") && this.m > 0 && movementIterator === true && this.isSelected === 1){
       this.y += -1;
       this.m += -1;
       movementIterator = false;
       print('big goof');
     }
     //down arrowkey
-    if ((keyCode === 40) && this.m > 0 && movementIterator === true){
+    if ((key === "S"|| key === "s") && this.m > 0 && movementIterator === true && this.isSelected === 1){
       this.y += 1;
       this.m += -1;
       movementIterator = false;
       print('big goof');
     }
     //Enter to end turn of unit
-    if (keyIsPressed && (keyCode === 13) && this.m > 0){
+    if (keyIsPressed && (keyCode === 13) && this.m > 0 && this.isSelected === 1){
       this.m = 0;
     }
 
@@ -151,6 +171,17 @@ class Infantry {
   refreshUnit(){
     if (this.m < this.max && endTurn === true){
       this.m = this.max;
+    }
+  }
+  selectThisUnit(){
+    if(mouseX > blockWidth * this.x && mouseX < blockWidth * (this.x + 1) && mouseY > blockHeight * this.y && mouseY < blockHeight * (this.y + 1) && playerCountries[playerTurn].ownedBy === this.ownedBy){
+      this.isSelected = 1;
+      print("it, in part, has worked");
+      movementIterator = false;
+    }
+    else{
+      this.isSelected = 0;
+      movementIterator = false;
     }
   }
 }

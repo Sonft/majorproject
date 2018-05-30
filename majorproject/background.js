@@ -97,6 +97,7 @@ function backGroundTwo() {
       refreshABunchOfUnits();
       print(playerTurn);//for code fixing
       endTurn = false;
+      movementIterator =  false;
     }
     else if (playerTurn < playerCountries.length){
       playerCountries[playerTurn].att === false;
@@ -105,6 +106,7 @@ function backGroundTwo() {
       refreshABunchOfUnits();
       print(playerTurn);//for code fixing
       endTurn = false;
+      movementIterator = false;
     }
   }
 }
@@ -152,7 +154,7 @@ function keyTyped() {
       if (playerGreatBritain.g >= 10 && playerGreatBritain.r >= 10 && unitMap[greatBritain.x][greatBritain.y]=== 0) {
         playerGreatBritain.g += -10;
         playerGreatBritain.r += -10;
-        let englishUnit = new Infantry(greatBritain.x, greatBritain.y, 50, "Great Britain",  0, 0, 0, 0, 3,3, 4);
+        let englishUnit = new Infantry(greatBritain.x, greatBritain.y, 50, "Great Britain",  0, 0, 0, 0, 3,3, 4, 0);
         unitsOfGreatBritain.push(englishUnit);
       }
     }
@@ -160,7 +162,7 @@ function keyTyped() {
       if (playerFrance.g >= 10 && playerFrance.r >= 10 && unitMap[france.x][france.y]=== 0) {
         playerFrance.g += -10;
         playerFrance.r += -10;
-        let frenchUnit = new Infantry(france.x , france.y, 50, "France", 0, 0, 0, 0, 3,3, 4);
+        let frenchUnit = new Infantry(france.x , france.y, 50, "France", 0, 0, 0, 0, 3,3, 4, 0);
         unitsOfFrance.push(frenchUnit);
       }
     }
@@ -168,7 +170,7 @@ function keyTyped() {
       if (playerSpain.g >= 10 && playerSpain.r >= 10 && unitMap[spain.x][spain.y]=== 0) {
         playerSpain.g += -10;
         playerSpain.r += -10;
-        let spanishUnit = new Infantry(spain.x, spain.y, 50, "Spain", 0, 0, 0, 0, 3,3, 4);
+        let spanishUnit = new Infantry(spain.x, spain.y, 50, "Spain", 0, 0, 0, 0, 3,3, 4, 0);
         unitsOfSpain.push(spanishUnit);
       }
 
@@ -177,13 +179,13 @@ function keyTyped() {
       if (playerPortugal.g >= 10 && playerPortugal.r >= 10 && unitMap[portugal.x][portugal.y]=== 0) {
         playerPortugal.g += -10;
         playerPortugal.r += -10;
-        let portugeseUnit = new Infantry(portugal.x, portugal.y, 50, "Portugal",  0, 0, 0, 0, 3,3, 4);
+        let portugeseUnit = new Infantry(portugal.x, portugal.y, 50, "Portugal",  0, 0, 0, 0, 3,3, 4, 0);
         unitsOfPortugal.push(portugeseUnit);
       }
     }
   }
   //Try with WASD
-  if (keyIsPressed && (keyCode === 40 || keyCode === 39 ||keyCode === 38 ||keyCode === 37 )){
+  if (keyIsPressed && (key === "A"|| key ==="a") || (key === "S"|| key ==="s") || (key === "D" || key ==="d")|| (key === "w"|| key ==="W")){
     movementIterator = true;
     print('big yoof');
   }
