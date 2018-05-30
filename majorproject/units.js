@@ -135,11 +135,32 @@ class Infantry {
 
 
   moveThisUnit(moveLimit) {
+<<<<<<< HEAD
     if ((key === "d"|| key === "D") && this.m > 0 && movementIterator === true && this.isSelected === 1){
+=======
+<<<<<<< HEAD
+    if (keyIsPressed && (keyCode === 39) && this.m > 0){
+      if (unitMap[this.x][this.y] === 4)  {
+        if (unitMap[this.x+1][this.y] === 2) {
+          for (let i = 0; i < unitsOfGreatBritain.length; i++) {
+            if (unitsOfGreatBritain[i].x === this.x+1 && unitsOfGreatBritain[i].y === this.y) {
+              let damage = ceil(random(0,6));
+
+              unitsOfGreatBritain[i].health = unitsOfGreatBritain[i].health - damage;
+              this.x += 1;
+              this.m += -1;
+            }
+          }
+        }
+      }
+=======
+    if ((keyCode === 39) && this.m > 0 && movementIterator === true){
+>>>>>>> 51e7f33c1d8da494abdaf8c3bbeb1b9d2034e650
       this.x += 1;
       this.m += -1;
       movementIterator = false;
       print('big goof');
+>>>>>>> 220c330e29a49686af72838a5257477e63440dd5
     }
     //left arrowkey
     if ( (key === "a"|| key === "A") && this.m > 0 && movementIterator === true && this.isSelected === 1){
@@ -173,6 +194,7 @@ class Infantry {
       this.m = this.max;
     }
   }
+<<<<<<< HEAD
   selectThisUnit(){
     if(mouseX > blockWidth * this.x && mouseX < blockWidth * (this.x + 1) && mouseY > blockHeight * this.y && mouseY < blockHeight * (this.y + 1) && playerCountries[playerTurn].ownedBy === this.ownedBy){
       this.isSelected = 1;
@@ -184,4 +206,7 @@ class Infantry {
       movementIterator = false;
     }
   }
+=======
+
+>>>>>>> 51e7f33c1d8da494abdaf8c3bbeb1b9d2034e650
 }
