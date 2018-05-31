@@ -16,7 +16,7 @@ function displayGrid() {
         fill(0, 0, 255);
       }
       else if (map[x][y] === 5) {
-        fill(0, 255, 0);
+        fill(58, 190, 58);
       }
       else if (map[x][y] === 6) {
         fill(255);

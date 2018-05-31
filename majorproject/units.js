@@ -76,7 +76,7 @@ class Infantry {
           }
           else if (showUnitMap === true){
             tint("grey");
-            image(franceUnit, x *blockWidth, y *blockHeight, blockWidth, blockHeight);
+            image(britainUnit, x *blockWidth, y *blockHeight, blockWidth, blockHeight);
           }
           else {
             tint(255, 67);
@@ -91,7 +91,7 @@ class Infantry {
           }
           else if (showUnitMap === true){
             tint("grey");
-            image(franceUnit, x *blockWidth, y *blockHeight, blockWidth, blockHeight);
+            image(spainUnit, x *blockWidth, y *blockHeight, blockWidth, blockHeight);
           }
           else {
             tint(255, 67);
@@ -121,7 +121,7 @@ class Infantry {
           }
           else if (showUnitMap === true){
             tint("grey");
-            image(franceUnit, x *blockWidth, y *blockHeight, blockWidth, blockHeight);
+            image(portugalUnit, x *blockWidth, y *blockHeight, blockWidth, blockHeight);
           }
           else {
             tint(255, 67);
