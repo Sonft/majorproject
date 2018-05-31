@@ -135,49 +135,44 @@ class Infantry {
 
 
   moveThisUnit(moveLimit) {
-<<<<<<< HEAD
-    if ((key === "d"|| key === "D") && this.m > 0 && movementIterator === true && this.isSelected === 1){
-=======
-<<<<<<< HEAD
-    if (keyIsPressed && (keyCode === 39) && this.m > 0){
-      if (unitMap[this.x][this.y] === 4)  {
-        if (unitMap[this.x+1][this.y] === 2) {
-          for (let i = 0; i < unitsOfGreatBritain.length; i++) {
-            if (unitsOfGreatBritain[i].x === this.x+1 && unitsOfGreatBritain[i].y === this.y) {
-              let damage = ceil(random(0,6));
 
-              unitsOfGreatBritain[i].health = unitsOfGreatBritain[i].health - damage;
-              this.x += 1;
-              this.m += -1;
-            }
-          }
-        }
-      }
-=======
-    if ((keyCode === 39) && this.m > 0 && movementIterator === true){
->>>>>>> 51e7f33c1d8da494abdaf8c3bbeb1b9d2034e650
+    // if (keyIsPressed &&(key === "d"|| key === "D") && this.m > 0 && movementIterator === true && this.isSelected === 1){
+    //   if (unitMap[this.x][this.y] === 4)  {
+    //     if (unitMap[this.x+1][this.y] === 2) {
+    //       for (let i = 0; i < unitsOfGreatBritain.length; i++) {
+    //         if (unitsOfGreatBritain[i].x === this.x+1 && unitsOfGreatBritain[i].y === this.y) {
+    //           let damage = ceil(random(0,6));
+    //
+    //           unitsOfGreatBritain[i].health = unitsOfGreatBritain[i].health - damage;
+    //           this.x += 1;
+    //           this.m += -1;
+    //         }
+    //       }
+    //     }
+    //   }
+    //previous move function
+    if ( (key === "d"|| key === "D") && this.m > 0 && movementIterator === true && this.isSelected === 1){
       this.x += 1;
       this.m += -1;
       movementIterator = false;
       print('big goof');
->>>>>>> 220c330e29a49686af72838a5257477e63440dd5
     }
     //left arrowkey
-    if ( (key === "a"|| key === "A") && this.m > 0 && movementIterator === true && this.isSelected === 1){
+    else if ( keyIsPressed &&(key === "a"|| key === "A") && this.m > 0 && movementIterator === true && this.isSelected === 1){
       this.x += -1;
       this.m += -1;
       movementIterator = false;
       print('big goof');
     }
     //upArrowKey
-    if ((key === "W"|| key === "w") && this.m > 0 && movementIterator === true && this.isSelected === 1){
+    else if (keyIsPressed &&(key === "W"|| key === "w") && this.m > 0 && movementIterator === true && this.isSelected === 1){
       this.y += -1;
       this.m += -1;
       movementIterator = false;
       print('big goof');
     }
     //down arrowkey
-    if ((key === "S"|| key === "s") && this.m > 0 && movementIterator === true && this.isSelected === 1){
+    else if (keyIsPressed && (key === "S"|| key === "s") && this.m > 0 && movementIterator === true && this.isSelected === 1){
       this.y += 1;
       this.m += -1;
       movementIterator = false;
@@ -194,9 +189,8 @@ class Infantry {
       this.m = this.max;
     }
   }
-<<<<<<< HEAD
   selectThisUnit(){
-    if(mouseX > blockWidth * this.x && mouseX < blockWidth * (this.x + 1) && mouseY > blockHeight * this.y && mouseY < blockHeight * (this.y + 1) && playerCountries[playerTurn].ownedBy === this.ownedBy){
+    if(mouseX > blockWidth * this.x && mouseX < blockWidth * (this.x + 1) && mouseY > blockHeight * this.y && mouseY < blockHeight * (this.y + 1) && playerCountries[playerTurn].o === this.ownedBy){
       this.isSelected = 1;
       print("it, in part, has worked");
       movementIterator = false;
@@ -206,7 +200,4 @@ class Infantry {
       movementIterator = false;
     }
   }
-=======
-
->>>>>>> 51e7f33c1d8da494abdaf8c3bbeb1b9d2034e650
 }
