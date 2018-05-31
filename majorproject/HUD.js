@@ -89,7 +89,7 @@ function shopMenu() {
   rectMode(CORNERS);
   fill(0);
   textSize(20);
-  text("press 'U' to Buy a unit of basic infantry unit please and thank you",blockWidth * 6, blockHeight * 6, blockWidth * 11, blockHeight * 11);
+  text("press 'U' to Buy a unit of basic infantry unit please and thank you, it will cost 10 gold and 10 resources",blockWidth * 6, blockHeight * 6, blockWidth * 11, blockHeight * 11);
   rectMode(CORNER);
 
 }

@@ -66,6 +66,7 @@ function setup() {
   map = createGrid(columns, rows);
   makeProvinceVariables();
   noStroke();
+  rectMode(CORNER);
 
   //THIS IS US CREATING THE PLAYER COUNTRIES AS A SEPERATE OBJECT THAT WILL INTERACT WITH THE HUD
   playerObjects();

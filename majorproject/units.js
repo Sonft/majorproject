@@ -157,7 +157,7 @@ class Infantry {
                 this.m = this.m - this.m;
               }
               let damage2 = ceil(random(0, playerCountries[i].u[j].s));
-              playerCountries[playerTurn].u[j].health = playerCountries[playerTurn].u[j].health - damage2;
+              this.health = this.health - damage2;
               if (this.health <= 0) {
                 this.ownedBy = "DEAD";
               }
@@ -191,7 +191,7 @@ class Infantry {
                 this.m = this.m - this.m;
               }
               let damage2 = ceil(random(0, playerCountries[i].u[j].s));
-              playerCountries[playerTurn].u[j].health = playerCountries[playerTurn].u[j].health - damage2;
+              this.health = this.health - damage2;
               if (this.health <= 0) {
                 this.ownedBy = "DEAD";
               }
@@ -224,7 +224,7 @@ class Infantry {
                 this.m = this.m - this.m;
               }
               let damage2 = ceil(random(0, playerCountries[i].u[j].s));
-              playerCountries[playerTurn].u[j].health = playerCountries[playerTurn].u[j].health - damage2;
+              this.health = this.health - damage2;
               if (this.health <= 0) {
                 this.ownedBy = "DEAD";
               }
@@ -257,7 +257,7 @@ class Infantry {
                 this.m = this.m - this.m;
               }
               let damage2 = ceil(random(0, playerCountries[i].u[j].s));
-              playerCountries[playerTurn].u[j].health = playerCountries[playerTurn].u[j].health - damage2;
+              this.health = this.health - damage2;
               if (this.health <= 0) {
                 this.ownedBy = "DEAD";
               }
