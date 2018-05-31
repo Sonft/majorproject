@@ -128,63 +128,158 @@ class Infantry {
             image(portugalUnit, x *blockWidth, y *blockHeight, blockWidth, blockHeight);
           }
         }
+        else if (this.ownedBy === "DEAD") {
+          unitMap[x][y] = 0;
+        }
       }
+
     }
   }
 
 
 
   moveThisUnit(moveLimit) {
+    //move right
+    if (keyIsPressed &&(key === "d"|| key === "D") && this.m > 0 && movementIterator === true && this.isSelected === 1){
+      print("that's a lotta 1 damage");
+      movementIterator = false;
+      if (unitMap[this.x][this.y] != unitMap[this.x+1][this.y] && unitMap[this.x+1][this.y] != 0)  {
+        print("that's a lotta 2 damage");
+        for (let i = 0; i < playerCountries.length; i++) {
+          for (let j = 0; j < playerCountries[i].u.length; j++) {
+            if (playerCountries[i].u[j].x === this.x + 1 && playerCountries[i].u[j].y === this.y) {
+              let damage = ceil(random(0,this.s));
+              playerCountries[i].u[j].health = playerCountries[i].u[j].health - damage;
+              print("that's a lotta damage");
+              if (playerCountries[i].u[j].health <= 0) {
+                playerCountries[i].u[j].ownedBy = "DEAD";
+                this.x += 1;
+                this.m = this.m - this.m;
+              }
+              let damage2 = ceil(random(0, playerCountries[i].u[j].s));
+              playerCountries[playerTurn].u[j].health = playerCountries[playerTurn].u[j].health - damage2;
+              if (this.health <= 0) {
+                this.ownedBy = "DEAD";
+              }
+              this.m = this.m - this.m;
 
-    // if (keyIsPressed &&(key === "d"|| key === "D") && this.m > 0 && movementIterator === true && this.isSelected === 1){
-    //   if (unitMap[this.x][this.y] === 4)  {
-    //     if (unitMap[this.x+1][this.y] === 2) {
-    //       for (let i = 0; i < unitsOfGreatBritain.length; i++) {
-    //         if (unitsOfGreatBritain[i].x === this.x+1 && unitsOfGreatBritain[i].y === this.y) {
-    //           let damage = ceil(random(0,6));
-    //
-    //           unitsOfGreatBritain[i].health = unitsOfGreatBritain[i].health - damage;
-    //           this.x += 1;
-    //           this.m += -1;
-    //         }
-    //       }
-    //     }
-    //   }
-    //previous move function
-    if ( (key === "d"|| key === "D") && this.m > 0 && movementIterator === true && this.isSelected === 1){
-      this.x += 1;
-      this.m += -1;
-      movementIterator = false;
-      print('big goof');
+            }
+          }
+        }
+      }
+      else {
+        this.x += 1;
+        this.m += -1;
+      }
     }
-    //left arrowkey
-    else if ( keyIsPressed &&(key === "a"|| key === "A") && this.m > 0 && movementIterator === true && this.isSelected === 1){
-      this.x += -1;
-      this.m += -1;
+
+    //move left
+    if (keyIsPressed &&(key === "a"|| key === "A") && this.m > 0 && movementIterator === true && this.isSelected === 1){
+      print("that's a lotta 1 damage");
       movementIterator = false;
-      print('big goof');
+      if (unitMap[this.x][this.y] != unitMap[this.x-1][this.y] && unitMap[this.x-1][this.y] != 0)  {
+        print("that's a lotta 2 damage");
+        for (let i = 0; i < playerCountries.length; i++) {
+          for (let j = 0; j < playerCountries[i].u.length; j++) {
+            if (playerCountries[i].u[j].x === this.x - 1 && playerCountries[i].u[j].y === this.y) {
+              let damage = ceil(random(0,this.s));
+              playerCountries[i].u[j].health = playerCountries[i].u[j].health - damage;
+              print("that's a lotta damage");
+              if (playerCountries[i].u[j].health <= 0) {
+                playerCountries[i].u[j].ownedBy = "DEAD";
+                this.x += -1;
+                this.m = this.m - this.m;
+              }
+              let damage2 = ceil(random(0, playerCountries[i].u[j].s));
+              playerCountries[playerTurn].u[j].health = playerCountries[playerTurn].u[j].health - damage2;
+              if (this.health <= 0) {
+                this.ownedBy = "DEAD";
+              }
+              this.m = this.m - this.m;
+            }
+          }
+        }
+      }
+      else {
+        this.x += -1;
+        this.m += -1;
+      }
     }
-    //upArrowKey
-    else if (keyIsPressed &&(key === "W"|| key === "w") && this.m > 0 && movementIterator === true && this.isSelected === 1){
-      this.y += -1;
-      this.m += -1;
+
+    //move up
+    if (keyIsPressed &&(key === "w"|| key === "W") && this.m > 0 && movementIterator === true && this.isSelected === 1){
+      print("that's a lotta 1 damage");
       movementIterator = false;
-      print('big goof');
+      if (unitMap[this.x][this.y] != unitMap[this.x][this.y-1] && unitMap[this.x][this.y-1] != 0)  {
+        print("that's a lotta 2 damage");
+        for (let i = 0; i < playerCountries.length; i++) {
+          for (let j = 0; j < playerCountries[i].u.length; j++) {
+            if (playerCountries[i].u[j].x === this.x && playerCountries[i].u[j].y === this.y - 1) {
+              let damage = ceil(random(0,this.s));
+              playerCountries[i].u[j].health = playerCountries[i].u[j].health - damage;
+              print("that's a lotta damage");
+              if (playerCountries[i].u[j].health <= 0) {
+                playerCountries[i].u[j].ownedBy = "DEAD";
+                this.y += -1;
+                this.m = this.m - this.m;
+              }
+              let damage2 = ceil(random(0, playerCountries[i].u[j].s));
+              playerCountries[playerTurn].u[j].health = playerCountries[playerTurn].u[j].health - damage2;
+              if (this.health <= 0) {
+                this.ownedBy = "DEAD";
+              }
+              this.m = this.m - this.m;
+            }
+          }
+        }
+      }
+      else {
+        this.y += -1;
+        this.m += -1;
+      }
     }
-    //down arrowkey
-    else if (keyIsPressed && (key === "S"|| key === "s") && this.m > 0 && movementIterator === true && this.isSelected === 1){
-      this.y += 1;
-      this.m += -1;
+
+    //move down
+    if (keyIsPressed &&(key === "s"|| key === "S") && this.m > 0 && movementIterator === true && this.isSelected === 1){
+      print("that's a lotta 1 damage");
       movementIterator = false;
-      print('big goof');
+      if (unitMap[this.x][this.y] != unitMap[this.x][this.y+1] && unitMap[this.x][this.y+1] != 0)  {
+        print("that's a lotta 2 damage");
+        for (let i = 0; i < playerCountries.length; i++) {
+          for (let j = 0; j < playerCountries[i].u.length; j++) {
+            if (playerCountries[i].u[j].x === this.x && playerCountries[i].u[j].y === this.y + 1) {
+              let damage = ceil(random(0,this.s));
+              playerCountries[i].u[j].health = playerCountries[i].u[j].health - damage;
+              print("that's a lotta damage");
+              if (playerCountries[i].u[j].health <= 0) {
+                playerCountries[i].u[j].ownedBy = "DEAD";
+                this.y += 1;
+                this.m = this.m - this.m;
+              }
+              let damage2 = ceil(random(0, playerCountries[i].u[j].s));
+              playerCountries[playerTurn].u[j].health = playerCountries[playerTurn].u[j].health - damage2;
+              if (this.health <= 0) {
+                this.ownedBy = "DEAD";
+              }
+              this.m = this.m - this.m;
+
+            }
+          }
+        }
+      }
+      else {
+        this.y += 1;
+        this.m += -1;
+      }
     }
     //Enter to end turn of unit
     if (keyIsPressed && (keyCode === 13) && this.m > 0 && this.isSelected === 1){
       this.m = 0;
     }
-
   }
-  refreshUnit(){
+
+
+  refreshUnit() {
     if (this.m < this.max && endTurn === true){
       this.m = this.max;
     }
