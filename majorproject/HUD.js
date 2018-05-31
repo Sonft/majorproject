@@ -3,18 +3,46 @@ function headsUpDisplay(playerCountry) {
   if (playerCountries[playerTurn].o === "Great Britain") {
     fill("red");
     rect(0, windowHeight - 3 * blockHeight, windowWidth, windowHeight);
+    //Displaying gold and resources
+    rectMode(CORNERS);
+    fill(255);
+    textSize(20);
+    text("resources: " + playerCountries[playerTurn].r ,0,windowHeight - blockHeight * 3,blockWidth * 4 , windowHeight);
+    text("Gold: " + playerCountries[playerTurn].g ,blockWidth * 4,windowHeight - blockHeight * 3,blockWidth * 8 , windowHeight);
+    rectMode(CORNER);
 
   } else if (playerCountries[playerTurn].o === "France") {
     fill("blue");
     rect(0, windowHeight - 3 * blockHeight, windowWidth, windowHeight);
+    //Displaying gold and resources
+    rectMode(CORNERS);
+    fill(255);
+    textSize(20);
+    text("resources: " + playerCountries[playerTurn].r ,0,windowHeight - blockHeight * 3,blockWidth * 4 , windowHeight);
+    text("Gold: " + playerCountries[playerTurn].g ,blockWidth * 4,windowHeight - blockHeight * 3,blockWidth * 8 , windowHeight);
+    rectMode(CORNER);
 
   } else if (playerCountries[playerTurn].o === "Portugal") {
-    fill("green");
+    fill(58, 190, 58);
     rect(0, windowHeight - 3 * blockHeight, windowWidth, windowHeight);
+    //Displaying gold and resources
+    rectMode(CORNERS);
+    fill(255, 255, 0);
+    textSize(20);
+    text("resources: " + playerCountries[playerTurn].r ,0,windowHeight - blockHeight * 3,blockWidth * 4 , windowHeight);
+    text("Gold: " + playerCountries[playerTurn].g ,blockWidth * 4,windowHeight - blockHeight * 3,blockWidth * 8 , windowHeight);
+    rectMode(CORNER);
 
   } else if (playerCountries[playerTurn].o === "Spain") {
     fill("yellow");
     rect(0, windowHeight - 3 * blockHeight, windowWidth, windowHeight);
+    //Displaying gold and resources
+    rectMode(CORNERS);
+    fill(198, 11, 30);
+    textSize(20);
+    text("resources: " + playerCountries[playerTurn].r ,0,windowHeight - blockHeight * 3,blockWidth * 4 , windowHeight);
+    text("Gold: " + playerCountries[playerTurn].g ,blockWidth * 4,windowHeight - blockHeight * 3,blockWidth * 8 , windowHeight);
+    rectMode(CORNER);
   }
 
 
@@ -57,6 +85,11 @@ function shopMenu() {
   fill(255, 0, 0);
   rect(windowWidth - 3 * blockWidth, 0, 3 * blockWidth, 3 * blockHeight);
   fill(255);
-  rect(windowWidth / 2, windowHeight / 2, windowWidth / 3, windowWidth / 3);
+  rect(blockWidth * 5, blockHeight * 5, windowWidth - (10* blockWidth), windowHeight - (10* blockHeight));
+  rectMode(CORNERS);
+  fill(0);
+  textSize(20);
+  text("press 'U' to Buy a unit of basic infantry unit please and thank you",blockWidth * 6, blockHeight * 6, blockWidth * 11, blockHeight * 11);
+  rectMode(CORNER);
 
 }
