@@ -76,7 +76,7 @@ function makeEarthMap() {
 
 // this whole thing is the class called province. It functions to make it easier to make countries for the game when starting up the game
 class Province {
-  constructor(name, xStart, xFin, yStart, yFin, ownedBy, gold, resources, isClicked) {
+  constructor(name, xStart, xFin, yStart, yFin, ownedBy, gold, resources, isClicked, health, strength) {
     this.n = name;//this represents the name
     this.x = xStart;//first x value
     this.x1 = xFin; // last x value
@@ -86,6 +86,8 @@ class Province {
     this.g = gold; // the gold and resources
     this.r = resources;
     this.c = isClicked;// and finally if the country is being clicked
+    this.h = health;
+    this.s = strength;
 
 
   }
