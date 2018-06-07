@@ -1,5 +1,9 @@
 // Changes colour based on who is playing and displays the amount of gold, resources, and other things
 function headsUpDisplay(playerCountry) {
+  stroke(0);
+
+
+
   if (playerCountries[playerTurn].o === "Great Britain") {
     fill("red");
     rect(0, windowHeight - 3 * blockHeight, windowWidth, windowHeight);
@@ -47,6 +51,9 @@ function headsUpDisplay(playerCountry) {
 
 
 
+
+
+
   //END TURN BUTTON
   fill(255);
   rect(windowWidth - 4 * blockWidth, windowHeight - 3 * blockHeight, windowWidth, windowHeight);
@@ -57,11 +64,29 @@ function headsUpDisplay(playerCountry) {
 
   //SHOP BUTTON
   fill(255);
-  rect(windowWidth - (8 * blockWidth), windowHeight - 3 * blockHeight, 4 * blockWidth, 3 * blockHeight);
+  rectMode(CORNERS);
+  rect(windowWidth - 7 * blockWidth, windowHeight - 3 * blockHeight, windowWidth - 4 * blockWidth, windowHeight);
+  rectMode(CORNER);
   fill(0);
   textSize(20);
-  text("Shop", windowWidth - 8 * blockWidth, windowHeight - 3 * blockHeight, windowWidth - 4 * blockWidth, windowHeight);
+  text("shop", windowWidth - 7 * blockWidth, windowHeight - 3 * blockHeight, windowWidth - 4 * blockWidth, windowHeight);
 
+  if (showUnitMap === true){
+    fill(0);
+    textSize(15);
+    text("unit map, press m to change", windowWidth - 12 * blockWidth, windowHeight - 3 * blockHeight, 5 * blockWidth, blockHeight * 3);
+
+  }
+  if (showUnitMap === false){
+    fill(0);
+    textSize(15);
+    text("province map, press m to change", windowWidth - 12 * blockWidth, windowHeight - 3 * blockHeight, 5 * blockWidth, blockHeight * 3);
+
+  }
+
+
+
+  noStroke();
 }
 
 //This information is indirectly shown to the player through the HUD. THE ONLY THING THIS IS USED FOR IS THE HUD

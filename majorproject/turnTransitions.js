@@ -22,14 +22,14 @@ function mouseClicked(){
     endTurn = true;
     playerCountries[playerTurn].att = false;
   }
-  if( mouseX > windowWidth - (8 * blockWidth)&& mouseY > windowHeight - 3 * blockHeight&& mouseX< windowWidth - (4 * blockWidth)&&  mouseY <windowHeight && isShopOpen === false){
+  if( mouseX > windowWidth - (7 * blockWidth)&& mouseY > windowHeight - 3 * blockHeight&& mouseX< windowWidth - (4 * blockWidth)&&  mouseY <windowHeight && isShopOpen === false){
     isShopOpen = true;
 
   }
   if(mouseX > windowWidth - (3* blockWidth) && mouseY>0 && mouseX < windowWidth && mouseY < (3*blockHeight) && isShopOpen === true){
     isShopOpen = false;
   }
-  
+
   if (endTurn === false && isShopOpen === false && playerTurn === 0){
     for(let x = 0; x < unitsOfGreatBritain.length; x++){
       unitsOfGreatBritain[x].selectThisUnit();
