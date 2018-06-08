@@ -60,23 +60,41 @@ function backGroundTwo() {
 
 
     if (playerTurn === 0){
+
       for (let x = 0; x < unitsOfGreatBritain.length; x++) {
         unitsOfGreatBritain[x].moveThisUnit();
+        if (keyIsPressed && (key === "B" || key === "b")) {
+          unitsOfGreatBritain[x].conquer();
+          print("AMAR IS STOOOPID");
+        }
       }
     }
     if (playerTurn === 1){
+      attackIterator === true;
       for (let y = 0; y < unitsOfFrance.length; y++) {
         unitsOfFrance[y].moveThisUnit();
+        if (keyIsPressed && (key === "B" || key === "b")) {
+          unitsOfFrance[y].conquer();
+        }
+
       }
     }
     if (playerTurn === 2){
+      attackIterator === true;
       for (let g = 0; g < unitsOfSpain.length; g++) {
         unitsOfSpain[g].moveThisUnit();
+        if (keyIsPressed && (key === "B" || key === "b")) {
+          unitsOfSpain[g].conquer();
+        }
       }
     }
     if (playerTurn === 3){
-      for (let g = 0; g < unitsOfPortugal.length; g++) {
-        unitsOfPortugal[g].moveThisUnit();
+      attackIterator === true;
+      for (let i = 0; i < unitsOfPortugal.length; i++) {
+        unitsOfPortugal[i].moveThisUnit();
+        if (keyIsPressed && (key === "B" || key === "b")) {
+          unitsOfPortugal[i].conquer();
+        }
       }
     }
 

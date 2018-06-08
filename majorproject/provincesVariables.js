@@ -85,7 +85,7 @@ function makeProvinceVariables() {
   britishColumbia = new Province("British Columbia", 2, 3, 0, 5, "No One", 0, 0, 0, 10, 4);
   yukon = new Province("Yukon", 3, 6, 0, 5, "No One", 0, 0, 0, 10, 4);
   northWest = new Province("Northwest Territories", 6, 12, 0, 5, "No One", 0, 0, 0, 10, 4);
-  GoSL = new Province("Gulf Of St.Lawrence", 12, 14, 4, 8, "No One", 0, 0, 0, 10, 4);
+  GoSL = new Province("Gulf Of St.Lawrence", 12, 14, 4, 8, "No One", 0, 0, 0, 1, 0);
   quebec = new Province("Quebec", 14, 17, 1, 6, "France", 2, 5, 0, 10, 4);
   //'Murica
   cascadian = new Province("Cascadia", 3, 6, 5, 10, "No One", 0, 0, 0, 10, 4);
