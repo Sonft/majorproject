@@ -55,11 +55,33 @@ function headsUpDisplay(playerCountry) {
 
 
   //END TURN BUTTON
-  fill(255);
-  rect(windowWidth - 4 * blockWidth, windowHeight - 3 * blockHeight, windowWidth, windowHeight);
-  fill(0);
-  textSize(20);
-  text("End Turn", windowWidth - 4 * blockWidth, windowHeight - 3 * blockHeight, windowWidth, windowHeight);
+  if (playerCountries[playerTurn].u.length>0){
+    for (let x = 0; x< playerCountries[playerTurn].u.length;x++){
+      if (playerCountries[playerTurn].u[x].m > 0){
+        fill("red");
+        rect(windowWidth - 4 * blockWidth, windowHeight - 3 * blockHeight, windowWidth, windowHeight);
+        fill(255);
+        textSize(20);
+        text("End Turn", windowWidth - 4 * blockWidth, windowHeight - 3 * blockHeight, windowWidth, windowHeight);
+
+      }
+      else{
+        fill(58, 190, 58);
+        rect(windowWidth - 4 * blockWidth, windowHeight - 3 * blockHeight, windowWidth, windowHeight);
+        fill(255);
+        textSize(20);
+        text("End Turn", windowWidth - 4 * blockWidth, windowHeight - 3 * blockHeight, windowWidth, windowHeight);
+      }
+    }
+  }
+  else{
+    fill(58, 190, 58);
+    rect(windowWidth - 4 * blockWidth, windowHeight - 3 * blockHeight, windowWidth, windowHeight);
+    fill(255);
+    textSize(20);
+    text("End Turn", windowWidth - 4 * blockWidth, windowHeight - 3 * blockHeight, windowWidth, windowHeight);
+  }
+
   //text label = gold, then resources, then player country
 
   //SHOP BUTTON
@@ -73,18 +95,20 @@ function headsUpDisplay(playerCountry) {
 
   if (showUnitMap === true){
     fill(0);
-    textSize(15);
+    textSize(windowWidth/100);
     text("unit map, press m to change", windowWidth - 12 * blockWidth, windowHeight - 3 * blockHeight, 5 * blockWidth, blockHeight * 3);
 
   }
   if (showUnitMap === false){
     fill(0);
-    textSize(15);
+    textSize(windowWidth/100);
     text("province map, press m to change", windowWidth - 12 * blockWidth, windowHeight - 3 * blockHeight, 5 * blockWidth, blockHeight * 3);
 
   }
 
-
+  fill(0);
+  textSize(windowWidth/100);
+  text("press w to go up, a to go left, s to go down, and d to go right. click on units to move them!", windowWidth - 20 * blockWidth, windowHeight - 3 * blockHeight, 8 * blockWidth, blockHeight * 3);
 
   noStroke();
 }

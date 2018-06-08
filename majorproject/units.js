@@ -88,7 +88,12 @@ class Infantry {
           if (showUnitMap === true && this.isSelected === 1) {
             tint(255, 255);
             image(britainUnit, x * blockWidth, y * blockHeight, blockWidth, blockHeight);
-          } else if (showUnitMap === true) {
+          }
+          else if (showUnitMap === true&& this.m >0) {
+            tint("green");
+            image(britainUnit, x * blockWidth, y * blockHeight, blockWidth, blockHeight);
+          }
+          else if (showUnitMap === true&& this.m <=0) {
             tint("grey");
             image(britainUnit, x * blockWidth, y * blockHeight, blockWidth, blockHeight);
           } else {
