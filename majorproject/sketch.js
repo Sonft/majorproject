@@ -23,6 +23,7 @@ let map;
 let unitMap;
 let showUnitMap;
 let isShopOpen = false;
+let attackIterator = true;
 
 //units! Bois
 let infantry;

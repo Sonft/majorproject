@@ -1,19 +1,5 @@
 let movementIterator = false;
 
-function colonyOwnership() {
-  for (let x = 0; x < unitsOfGreatBritain.length; x++) {
-    unitsOfGreatBritain[x].conquer();
-  }
-  for (let y = 0; y < unitsOfFrance.length; y++) {
-    unitsOfFrance[y].conquer();
-  }
-  for (let l = 0; l < unitsOfSpain.length; l++) {
-    unitsOfSpain[l].conquer();
-  }
-  for (let g = 0; g < unitsOfPortugal.length; g++) {
-    unitsOfPortugal[g].conquer();
-  }
-}
 
 
 function displayUnits() {
@@ -301,20 +287,30 @@ class Infantry {
   //Check through master list of colonies to find the right x and y values
 
   conquer() {
+
     for (let i = 0; i < playerCountries[playerTurn].u.length; i++) {
       for (let j = 0; j < masterListOfCountry.length; j++) {
-        if (masterListOfCountry[j].x < playerCountries[playerTurn].u[i].x < masterListOfCountry[j].x1 && masterListOfCountry[j].y < playerCountries[playerTurn].u[i].y < masterListOfCountry[j].y1) {
-          let damage = ceil(random(0, this.s));
-          masterListOfCountry[j].h = masterListOfCountry[j].h - damage;
+        if (masterListOfCountry[j].x < playerCountries[playerTurn].u[i].x && playerCountries[playerTurn].u[i].x < masterListOfCountry[j].x1 && masterListOfCountry[j].y < playerCountries[playerTurn].u[i].y && playerCountries[playerTurn].u[i].y < masterListOfCountry[j].y1 && masterListOfCountry[j].ownedBy !== this.ownedBy) {
           let damage2 = ceil(random(0, masterListOfCountry[j].s));
           playerCountries[playerTurn].u[i].health = playerCountries[playerTurn].u[i].health - damage2;
-          if (masterListOfCountry[j].h === 0 && playerCountries[i].health > 0) {
+          print("damage taken");
+
+          let damage = ceil(random(0, this.s));
+          masterListOfCountry[j].h = masterListOfCountry[j].h - damage;
+          print("damaged");
+
+          if (masterListOfCountry[j].h <= 0 && playerCountries[playerTurn].u[i].health > 0) {
             masterListOfCountry[j].ownedBy = playerCountries[playerTurn].o;
           }
           if (playerCountries[playerTurn].u[i].health <= 0) {
             playerCountries[playerTurn].u[i].ownedBy = "DEAD";
           }
+
           this.m = this.m - this.m;
+
+        }
+        else {
+          print("nope");
         }
       }
     }
