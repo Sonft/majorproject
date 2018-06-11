@@ -126,6 +126,7 @@ function backGroundTwo() {
       endTurn = false;
       movementIterator = false;
     }
+    //for (let i = 0; i < )
   }
 }
 //makes the tutorial screen
