@@ -49,7 +49,7 @@ function refreshABunchOfUnits() {
 
 
 class Infantry {
-  constructor(x, y, h, o, movesLeft, movesRight, movesDown, movesUp, moveLimit, maxMoves, strength, isSelected) {
+  constructor(x, y, h, o, movesLeft, movesRight, movesDown, movesUp, moveLimit, maxMoves, strength, isSelected, maxHealth) {
     this.x = x;
     this.y = y;
     this.x1 = x +1;
@@ -64,6 +64,7 @@ class Infantry {
     this.max = maxMoves;
     this.s = strength;
     this.isSelected = isSelected;
+    this.maxHealth = maxHealth;
 
   }
   display(x, y, movesLeft, movesRight, movesDown, movesUp, o) {
@@ -272,6 +273,7 @@ class Infantry {
     //Enter to end turn of unit
     if (keyIsPressed && (keyCode === 13) && this.m > 0 && this.isSelected === 1&& this.ownedBy !== "DEAD") {
       this.m = 0;
+      this.health += this.maxHealth/5;
     }
   }
 
