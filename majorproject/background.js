@@ -126,7 +126,20 @@ function backGroundTwo() {
       endTurn = false;
       movementIterator = false;
     }
-    //for (let i = 0; i < )
+    // let regularChineseHealth = 75; // (tier 1)
+    // let indianArabianHealth = 70; // (tier 2)
+    // let norAfricaHealth = 50; // (tier 3)
+    // let indoChineseHealth = 40; // (tier 4)
+    // let centSouAfricaHealth = 35; // (tier 5)
+    // let mexiBraziCentAmerHealth = 30; // (tier 6)
+    // let westSouSouAmerHealth = 20; // (tier 7)
+    // let norCanAusCaribHealth = 15; // (tier 8)
+    // let quebAmerHealth = 10; // (tier 9)
+    for (let i = 0; i < masterListOfCountry.length; i++) {
+      if (masterListOfCountry[i].h < masterListOfCountry[i].mH) {
+        masterListOfCountry[i].h += 1;
+      }
+    }
   }
 }
 //makes the tutorial screen

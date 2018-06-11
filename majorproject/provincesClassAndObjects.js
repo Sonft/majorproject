@@ -76,7 +76,7 @@ function makeEarthMap() {
 
 // this whole thing is the class called province. It functions to make it easier to make countries for the game when starting up the game
 class Province {
-  constructor(name, xStart, xFin, yStart, yFin, ownedBy, gold, resources, isClicked, health, strength) {
+  constructor(name, xStart, xFin, yStart, yFin, ownedBy, gold, resources, isClicked, maxHealth, strength,health) {
     this.n = name;//this represents the name
     this.x = xStart;//first x value
     this.x1 = xFin; // last x value
@@ -88,6 +88,7 @@ class Province {
     this.c = isClicked;// and finally if the country is being clicked
     this.h = health;
     this.s = strength;
+    this.mH = maxHealth;
 
 
   }
@@ -122,7 +123,7 @@ class Province {
           this.c = 1;
         }
         //this turns off the popup
-        isClicked(this.x, this.y, this.x1, this.y1, this.n, this.g, this.r, this.c, this.ownedBy);
+        isClicked(this.x, this.y, this.x1, this.y1, this.n, this.g, this.r, this.c, this.ownedBy, this.h,this.mH);
         if (keyIsPressed && (key === "c"|| key === "C") || isShopOpen === true || showUnitMap === true) {
           this.c = 0;
 
