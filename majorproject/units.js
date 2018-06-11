@@ -125,6 +125,13 @@ class Infantry {
         } else if (this.ownedBy === "DEAD") {
           unitMap[x][y] = 0;
         }
+        if(this.ownedBy !== "DEAD"){
+          stroke(0);
+          fill(255);
+          text(this.health,x * blockWidth, y * blockHeight, blockWidth, blockHeight);
+          noStroke();
+        }
+
       }
 
     }
