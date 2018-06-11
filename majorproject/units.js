@@ -52,8 +52,8 @@ class Infantry {
   constructor(x, y, h, o, movesLeft, movesRight, movesDown, movesUp, moveLimit, maxMoves, strength, isSelected) {
     this.x = x;
     this.y = y;
-    this.x1 = x + 1;
-    this.y1 = y + 1;
+    this.x1 = x +1;
+    this.y1 = y +1;
     this.health = h;
     this.ownedBy = o;
     this.l = movesLeft;
@@ -134,7 +134,7 @@ class Infantry {
 
   moveThisUnit(moveLimit) {
     //move right
-    if (keyIsPressed && (key === "d" || key === "D") && this.m > 0 && movementIterator === true && this.isSelected === 1) {
+    if (keyIsPressed && (key === "d" || key === "D") && this.m > 0 && movementIterator === true && this.isSelected === 1&& this.ownedBy !== "DEAD") {
       print("that's a lotta 1 damage");
       movementIterator = false;
       if (unitMap[this.x][this.y] != unitMap[this.x + 1][this.y] && unitMap[this.x + 1][this.y] != 0) {
@@ -167,7 +167,7 @@ class Infantry {
     }
 
     //move left
-    if (keyIsPressed && (key === "a" || key === "A") && this.m > 0 && movementIterator === true && this.isSelected === 1) {
+    if (keyIsPressed && (key === "a" || key === "A") && this.m > 0 && movementIterator === true && this.isSelected === 1&& this.ownedBy !== "DEAD") {
       print("that's a lotta 1 damage");
       movementIterator = false;
       if (unitMap[this.x][this.y] != unitMap[this.x - 1][this.y] && unitMap[this.x - 1][this.y] != 0) {
@@ -199,7 +199,7 @@ class Infantry {
     }
 
     //move up
-    if (keyIsPressed && (key === "w" || key === "W") && this.m > 0 && movementIterator === true && this.isSelected === 1) {
+    if (keyIsPressed && (key === "w" || key === "W") && this.m > 0 && movementIterator === true && this.isSelected === 1&& this.ownedBy !== "DEAD") {
       print("that's a lotta 1 damage");
       movementIterator = false;
       if (unitMap[this.x][this.y] != unitMap[this.x][this.y - 1] && unitMap[this.x][this.y - 1] != 0) {
@@ -231,7 +231,7 @@ class Infantry {
     }
 
     //move down
-    if (keyIsPressed && (key === "s" || key === "S") && this.m > 0 && movementIterator === true && this.isSelected === 1) {
+    if (keyIsPressed && (key === "s" || key === "S") && this.m > 0 && movementIterator === true && this.isSelected === 1&& this.ownedBy !== "DEAD") {
       print("that's a lotta 1 damage");
       movementIterator = false;
       if (unitMap[this.x][this.y] != unitMap[this.x][this.y + 1] && unitMap[this.x][this.y + 1] != 0) {
@@ -263,7 +263,7 @@ class Infantry {
       }
     }
     //Enter to end turn of unit
-    if (keyIsPressed && (keyCode === 13) && this.m > 0 && this.isSelected === 1) {
+    if (keyIsPressed && (keyCode === 13) && this.m > 0 && this.isSelected === 1&& this.ownedBy !== "DEAD") {
       this.m = 0;
     }
   }
@@ -275,7 +275,7 @@ class Infantry {
     }
   }
   selectThisUnit() {
-    if (mouseX > blockWidth * this.x && mouseX < blockWidth * (this.x + 1) && mouseY > blockHeight * this.y && mouseY < blockHeight * (this.y + 1) && playerCountries[playerTurn].o === this.ownedBy) {
+    if (mouseX > blockWidth * this.x && mouseX < blockWidth * (this.x + 1) && mouseY > blockHeight * this.y && mouseY < blockHeight * (this.y + 1) && playerCountries[playerTurn].o === this.ownedBy&& this.ownedBy !== "DEAD") {
       this.isSelected = 1;
       print("it, in part, has worked");
       movementIterator = false;
@@ -290,7 +290,10 @@ class Infantry {
 
     for (let i = 0; i < playerCountries[playerTurn].u.length; i++) {
       for (let j = 0; j < masterListOfCountry.length; j++) {
-        if (masterListOfCountry[j].x < playerCountries[playerTurn].u[i].x && playerCountries[playerTurn].u[i].x < masterListOfCountry[j].x1 && masterListOfCountry[j].y < playerCountries[playerTurn].u[i].y && playerCountries[playerTurn].u[i].y < masterListOfCountry[j].y1 && masterListOfCountry[j].ownedBy !== this.ownedBy) {
+        if (masterListOfCountry[j].x < playerCountries[playerTurn].u[i].x && playerCountries[playerTurn].u[i].x < masterListOfCountry[j].x1
+          && masterListOfCountry[j].y < playerCountries[playerTurn].u[i].y && playerCountries[playerTurn].u[i].y < masterListOfCountry[j].y1 && masterListOfCountry[j].ownedBy !== this.ownedBy && this.ownedBy !== "DEAD") {
+
+
           let damage2 = ceil(random(0, masterListOfCountry[j].s));
           playerCountries[playerTurn].u[i].health = playerCountries[playerTurn].u[i].health - damage2;
           print("damage taken");
