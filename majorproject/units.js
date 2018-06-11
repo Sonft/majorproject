@@ -153,15 +153,16 @@ class Infantry {
               let damage = ceil(random(0, this.s));
               playerCountries[i].u[j].health = playerCountries[i].u[j].health - damage;
               print("that's a lotta damage");
-              if (playerCountries[i].u[j].health <= 0) {
-                playerCountries[i].u[j].ownedBy = "DEAD";
-                this.x += 1;
-                this.m = this.m - this.m;
-              }
+
               let damage2 = ceil(random(0, playerCountries[i].u[j].s));
               this.health = this.health - damage2;
               if (this.health <= 0) {
                 this.ownedBy = "DEAD";
+              }
+              if (playerCountries[i].u[j].health <= 0) {
+                playerCountries[i].u[j].ownedBy = "DEAD";
+                this.x += 1;
+                this.m = this.m - this.m;
               }
               this.m = this.m - this.m;
 
@@ -186,15 +187,16 @@ class Infantry {
               let damage = ceil(random(0, this.s));
               playerCountries[i].u[j].health = playerCountries[i].u[j].health - damage;
               print("that's a lotta damage");
-              if (playerCountries[i].u[j].health <= 0) {
-                playerCountries[i].u[j].ownedBy = "DEAD";
-                this.x += -1;
-                this.m = this.m - this.m;
-              }
+
               let damage2 = ceil(random(0, playerCountries[i].u[j].s));
               this.health = this.health - damage2;
               if (this.health <= 0) {
                 this.ownedBy = "DEAD";
+              }
+              if (playerCountries[i].u[j].health <= 0) {
+                playerCountries[i].u[j].ownedBy = "DEAD";
+                this.x += -1;
+                this.m = this.m - this.m;
               }
               this.m = this.m - this.m;
             }
@@ -218,15 +220,16 @@ class Infantry {
               let damage = ceil(random(0, this.s));
               playerCountries[i].u[j].health = playerCountries[i].u[j].health - damage;
               print("that's a lotta damage");
-              if (playerCountries[i].u[j].health <= 0) {
-                playerCountries[i].u[j].ownedBy = "DEAD";
-                this.y += -1;
-                this.m = this.m - this.m;
-              }
+
               let damage2 = ceil(random(0, playerCountries[i].u[j].s));
               this.health = this.health - damage2;
               if (this.health <= 0) {
                 this.ownedBy = "DEAD";
+              }
+              if (playerCountries[i].u[j].health <= 0) {
+                playerCountries[i].u[j].ownedBy = "DEAD";
+                this.y += -1;
+                this.m = this.m - this.m;
               }
               this.m = this.m - this.m;
             }
@@ -250,15 +253,16 @@ class Infantry {
               let damage = ceil(random(0, this.s));
               playerCountries[i].u[j].health = playerCountries[i].u[j].health - damage;
               print("that's a lotta damage");
-              if (playerCountries[i].u[j].health <= 0) {
-                playerCountries[i].u[j].ownedBy = "DEAD";
-                this.y += 1;
-                this.m = this.m - this.m;
-              }
+
               let damage2 = ceil(random(0, playerCountries[i].u[j].s));
               this.health = this.health - damage2;
               if (this.health <= 0) {
                 this.ownedBy = "DEAD";
+              }
+              if (playerCountries[i].u[j].health <= 0) {
+                playerCountries[i].u[j].ownedBy = "DEAD";
+                this.y += 1;
+                this.m = this.m - this.m;
               }
               this.m = this.m - this.m;
 
@@ -273,7 +277,10 @@ class Infantry {
     //Enter to end turn of unit
     if (keyIsPressed && (keyCode === 13) && this.m > 0 && this.isSelected === 1&& this.ownedBy !== "DEAD") {
       this.m = 0;
-      this.health += this.maxHealth/5;
+      if (this.health <= this.maxHealth/5 * 4) {
+        this.health += floor(this.maxHealth/5);
+      }
+
     }
   }
 
@@ -325,6 +332,17 @@ class Infantry {
         else {
           print("nope");
         }
+      }
+    }
+  }
+}
+
+
+function deadUnitCheck() {
+  for(let i = 0; i < playerCountries.length; i++) {
+    for (let j = 0; j < playerCountries[i].u.length; j++) {
+      if (playerCountries[i].u[j].health <= 0) {
+        playerCountries[i].u.splice(j, 1);
       }
     }
   }

@@ -161,23 +161,23 @@ function makeProvinceVariables() {
     "Uncolonizable Men", 0, 0, 0, 10, 4, 10);
   //North Africa
   morocco = new Province("Morocco", 21, 23, 16, 22,
-    "No One", 0, 0, 0, norAfricaHealth, 4, norAfricaHealth);
+    "No One", 7, 1, 0, norAfricaHealth, 14, norAfricaHealth);
   algeria = new Province("Algeria", 23, 26, 15, 19,
-    "No One", 0, 0, 0, norAfricaHealth, 4, norAfricaHealth);
+    "No One", 6, 1, 0, norAfricaHealth, 10, norAfricaHealth);
   tunis = new Province("Tunis", 26, 29, 15, 19,
-    "No One", 0, 0, 0, norAfricaHealth, 4, norAfricaHealth);
+    "No One", 7, 0, 0, norAfricaHealth, 13, norAfricaHealth);
   egypt = new Province("Egypt", 29, 32, 16, 19,
-    "No One", 0, 0, 0, norAfricaHealth, 4, norAfricaHealth);
+    "No One", 10, 2, 0, norAfricaHealth, 17, norAfricaHealth);
   somalia = new Province("Somalia", 29, 32, 19, 24,
-    "No One", 0, 0, 0, norAfricaHealth, 4, norAfricaHealth);
+    "No One", 2, 6, 0, norAfricaHealth, 10, norAfricaHealth);
   //Middle Africa
   middleAfrica = new Province("Central Africa", 23, 29, 19, 23,
     "Uncolonizable Men", 0, 0, 0, 10, 4, 10);
   //South/Central Africa
   westCongo = new Province("West Congo", 24, 26, 23, 29,
-    "No One", 0, 0, 0, centSouAfricaHealth, 4, centSouAfricaHealth);
+    "No One", 2, 12, 0, centSouAfricaHealth, 20, centSouAfricaHealth);
   congo = new Province("Congo", 26, 29, 23, 29,
-    "No One", 0, 0, 0, centSouAfricaHealth, 4, centSouAfricaHealth);
+    "No One", 7, 5, 0, centSouAfricaHealth, 20, centSouAfricaHealth);
   mombasa = new Province("Mombasa", 29, 30, 24, 30,
     "No One", 0, 0, 0, centSouAfricaHealth, 4, centSouAfricaHealth);
   southAfrica = new Province("South Africa", 25, 29, 29, 32,
