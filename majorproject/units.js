@@ -299,8 +299,9 @@ class Infantry {
 
     for (let i = 0; i < playerCountries[playerTurn].u.length; i++) {
       for (let j = 0; j < masterListOfCountry.length; j++) {
-        if (masterListOfCountry[j].x < playerCountries[playerTurn].u[i].x && playerCountries[playerTurn].u[i].x < masterListOfCountry[j].x1
-          && masterListOfCountry[j].y < playerCountries[playerTurn].u[i].y && playerCountries[playerTurn].u[i].y < masterListOfCountry[j].y1 && masterListOfCountry[j].ownedBy !== this.ownedBy && this.ownedBy !== "DEAD") {
+        if (masterListOfCountry[j].x <= playerCountries[playerTurn].u[i].x && playerCountries[playerTurn].u[i].x < masterListOfCountry[j].x1
+          && masterListOfCountry[j].y <= playerCountries[playerTurn].u[i].y && playerCountries[playerTurn].u[i].y < masterListOfCountry[j].y1
+          && masterListOfCountry[j].ownedBy !== this.ownedBy && this.ownedBy !== "DEAD" && this.m > 0 && masterListOfCountry[j].ownedBy !== "Uncolonizable Men") {
 
 
           let damage2 = ceil(random(0, masterListOfCountry[j].s));

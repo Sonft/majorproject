@@ -78,79 +78,95 @@ let playerPortugal;
 
 function makeProvinceVariables() {
   //setting objects
-  //Canadian Cores
-  //THIS IS A LIST OF ALL THE COUNTIES
 
-  alaska = new Province("Alaska", 0, 2, 0, 2, "No One", 2, 3, 0, 10, 4);
-  britishColumbia = new Province("British Columbia", 2, 3, 0, 5, "No One", 0, 0, 0, 10, 4);
-  yukon = new Province("Yukon", 3, 6, 0, 5, "No One", 0, 0, 0, 10, 4);
-  northWest = new Province("Northwest Territories", 6, 12, 0, 5, "No One", 0, 0, 0, 10, 4);
-  GoSL = new Province("Gulf Of St.Lawrence", 12, 14, 4, 8, "No One", 0, 0, 0, 1, 0);
-  quebec = new Province("Quebec", 14, 17, 1, 6, "France", 2, 5, 0, 10, 4);
+  //THIS IS A LIST OF ALL THE COUNTIES
+  //Name, x, x1, y, y1, Owned By, Gold, Resources, some shit we don't need to worry about, health, strength
+
+  // // tier 9 = 10; tier 8 = 15; tier 7 = 20; tier 6 = 30; tier 5 = 35; tier 4 = 40; tier 3 = 50; tier 2 = 70; tier 1 = 75;
+  //
+  // let regularChineseHealth = 75; // (tier 1)
+  // let indianArabianHealth = 70; // (tier 2)
+  // let norAfricaHealth = 50; // (tier 3)
+  // let indoChineseHealth = 40; // (tier 4)
+  // let centSouAfricaHealth = 35; // (tier 5)
+  // let mexiBraziCentAmerHealth = 30; // (tier 6)
+  // let westSouSouAmerHealth = 20; // (tier 7)
+  // let norCanAusCaribHealth = 15; // (tier 8)
+  // let quebAmerHealth = 10; // (tier 9)
+
+  //Canadian Cores
+  alaska = new Province("Alaska", 0, 2, 0, 2, "No One", 2, 3, 0, norCanAusCaribHealth, 4);
+  britishColumbia = new Province("British Columbia", 2, 3, 0, 5, "No One", 0, 0, 0, norCanAusCaribHealth, 4);
+  yukon = new Province("Yukon", 3, 6, 0, 5, "No One", 0, 0, 0, norCanAusCaribHealth, 4);
+  northWest = new Province("Northwest Territories", 6, 12, 0, 5, "No One", 0, 0, 0, norCanAusCaribHealth, 4);
   //'Murica
-  cascadian = new Province("Cascadia", 3, 6, 5, 10, "No One", 0, 0, 0, 10, 4);
-  louisiana = new Province("Louisiana", 6, 10, 5, 10, "No One", 0, 0, 0, 10, 4);
-  eastAmerica = new Province("Eastern America", 10, 12, 5, 10, "No One", 0, 0, 0, 10, 4);
-  florida = new Province("Florida", 10, 12, 10, 12, "No One", 0, 0, 0, 10, 4);
+  GoSL = new Province("Gulf Of St.Lawrence", 12, 14, 4, 8, "No One", 0, 0, 0, quebAmerHealth, 4);
+  quebec = new Province("Quebec", 14, 17, 1, 6, "No One", 2, 5, 0, quebAmerHealth, 4);
+  cascadian = new Province("Cascadia", 3, 6, 5, 10, "No One", 0, 0, 0, quebAmerHealth, 4);
+  louisiana = new Province("Louisiana", 6, 10, 5, 10, "No One", 0, 0, 0, quebAmerHealth, 4);
+  eastAmerica = new Province("Eastern America", 10, 12, 5, 10, "No One", 0, 0, 0, quebAmerHealth, 4);
+  florida = new Province("Florida", 10, 12, 10, 12, "No One", 0, 0, 0, quebAmerHealth, 4);
   //Central America
-  mexico = new Province("Mexico", 4, 8, 10, 14, "No One", 0, 0, 0, 10, 4);
-  centAmeri = new Province("Central America", 6, 8, 14, 17, "No One", 0, 0, 0, 10, 4);
-  panama = new Province("Panama", 8, 10, 16, 17, "No One", 0, 0, 0, 10, 4);
-  cuba = new Province("Cuba", 10, 13, 14, 15, "No One", 0, 0, 0, 10, 4);
+  mexico = new Province("Mexico", 4, 8, 10, 14, "No One", 0, 0, 0, mexiBraziCentAmerHealth, 4);
+  centAmeri = new Province("Central America", 6, 8, 14, 17, "No One", 0, 0, 0, mexiBraziCentAmerHealth, 4);
+  panama = new Province("Panama", 8, 10, 16, 17, "No One", 0, 0, 0, mexiBraziCentAmerHealth, 4);
+  cuba = new Province("Cuba", 10, 13, 14, 15, "No One", 0, 0, 0, mexiBraziCentAmerHealth, 4);
   //South America
-  venezuela = new Province("Venezuela", 9, 11, 17, 19, "No One", 0, 0, 0, 10, 4);
-  guinea = new Province("Guinea", 11, 15, 18, 19, "No One", 0, 0, 0, 10, 4);
-  bolivia = new Province("Bolivia", 7, 10, 19, 22, "No One", 0, 0, 0, 10, 4);
-  brazil = new Province("Brazil", 10, 17, 19, 26, "No One", 0, 0, 0, 10, 4);
-  peru = new Province("Peru", 8, 10, 22, 25, "No One", 0, 0, 0, 10, 4);
-  chile = new Province("Chile", 9, 10, 25, 35, "No One", 0, 0, 0, 10, 4);
-  laPlata = new Province("La Plata", 10, 12, 26, 33, "No One", 0, 0, 0, 10, 4);
-  uruguay = new Province("Uruguay", 12, 15, 26, 29, "No One", 0, 0, 0, 10, 4);
+  venezuela = new Province("Venezuela", 9, 11, 17, 19, "No One", 0, 0, 0, mexiBraziCentAmerHealth, 4);
+  guinea = new Province("Guinea", 11, 15, 18, 19, "No One", 0, 0, 0, mexiBraziCentAmerHealth, 4);
+  brazil = new Province("Brazil", 10, 17, 19, 26, "No One", 0, 0, 0, mexiBraziCentAmerHealth, 4);
+
+  bolivia = new Province("Bolivia", 7, 10, 19, 22, "No One", 0, 0, 0, westSouSouAmerHealth, 4);
+  peru = new Province("Peru", 8, 10, 22, 25, "No One", 0, 0, 0, westSouSouAmerHealth, 4);
+  chile = new Province("Chile", 9, 10, 25, 35, "No One", 0, 0, 0, westSouSouAmerHealth, 4);
+  laPlata = new Province("La Plata", 10, 12, 26, 33, "No One", 0, 0, 0, westSouSouAmerHealth, 4);
+  uruguay = new Province("Uruguay", 12, 15, 26, 29, "No One", 0, 0, 0, westSouSouAmerHealth, 4);
   //Western Europe
-  greatBritain = new Province("Great Britain", 20, 22, 5, 8, "Great Britain", 5, 5, 0, 10, 4);
-  france = new Province("France", 22, 25, 9, 11, "France", 5, 5, 0, 10, 4);
-  portugal = new Province("Portugal", 21, 22, 11, 13, "Portugal", 5, 5, 0, 10, 4);
-  spain = new Province("Spain", 22, 24, 11, 13, "Spain", 5, 5, 0, 10, 4);
+  greatBritain = new Province("Great Britain", 20, 22, 5, 8, "Great Britain", 5, 5, 0, 500, 4);
+  france = new Province("France", 22, 25, 9, 11, "France", 5, 5, 0, 500, 4);
+  portugal = new Province("Portugal", 21, 22, 11, 13, "Portugal", 5, 5, 0, 500, 4);
+  spain = new Province("Spain", 22, 24, 11, 13, "Spain", 5, 5, 0, 500, 4);
   //Rest of Europe
   restOfEurope = new Province("the Rest Of Europe", 25, 32, 8, 12, "Uncolonizable Men", 0, 0, 0, 10, 4);
   italy = new Province("Italy", 27, 29, 12, 14, "Uncolonizable Men", 0, 0, 0, 10, 4);
   scandinavia = new Province("Scandinavia", 25, 32, 2, 5, "Uncolonizable Men", 0, 0, 0, 10, 4);
   //North Africa
-  morocco = new Province("Morocco", 21, 23, 16, 22, "No One", 0, 0, 0, 10, 4);
-  algeria = new Province("Algeria", 23, 26, 15, 19, "No One", 0, 0, 0, 10, 4);
-  tunis = new Province("Tunis", 26, 29, 15, 19, "No One", 0, 0, 0, 10, 4);
-  egypt = new Province("Egypt", 29, 32, 16, 19, "No One", 0, 0, 0, 10, 4);
+  morocco = new Province("Morocco", 21, 23, 16, 22, "No One", 0, 0, 0, norAfricaHealth, 4);
+  algeria = new Province("Algeria", 23, 26, 15, 19, "No One", 0, 0, 0, norAfricaHealth, 4);
+  tunis = new Province("Tunis", 26, 29, 15, 19, "No One", 0, 0, 0, norAfricaHealth, 4);
+  egypt = new Province("Egypt", 29, 32, 16, 19, "No One", 0, 0, 0, norAfricaHealth, 4);
+  somalia = new Province("Somalia", 29, 32, 19, 24, "No One", 0, 0, 0, norAfricaHealth, 4);
   //Middle Africa
   middleAfrica = new Province("Central Africa", 23, 29, 19, 23, "Uncolonizable Men", 0, 0, 0, 10, 4);
   //South/Central Africa
-  westCongo = new Province("West Congo", 24, 26, 23, 29, "No One", 0, 0, 0, 10, 4);
-  congo = new Province("Congo", 26, 29, 23, 29, "No One", 0, 0, 0, 10, 4);
-  somalia = new Province("Somalia", 29, 32, 19, 24, "No One", 0, 0, 0, 10, 4);
-  mombasa = new Province("Mombasa", 29, 30, 24, 30, "No One", 0, 0, 0, 10, 4);
-  southAfrica = new Province("South Africa", 25, 29, 29, 32, "No One", 0, 0, 0, 10, 4);
-  madagascar = new Province("Madagascar", 32, 34, 26, 29, "No One", 0, 0, 0, 10, 4);
+  westCongo = new Province("West Congo", 24, 26, 23, 29, "No One", 0, 0, 0, centSouAfricaHealth, 4);
+  congo = new Province("Congo", 26, 29, 23, 29, "No One", 0, 0, 0, centSouAfricaHealth, 4);
+  mombasa = new Province("Mombasa", 29, 30, 24, 30, "No One", 0, 0, 0, centSouAfricaHealth, 4);
+  southAfrica = new Province("South Africa", 25, 29, 29, 32, "No One", 0, 0, 0, centSouAfricaHealth, 4);
+  madagascar = new Province("Madagascar", 32, 34, 26, 29, "No One", 0, 0, 0, centSouAfricaHealth, 4);
   //Middle East and India
-  iran = new Province("Iran", 32, 37, 13, 16, "No One", 0, 0, 0, 10, 4);
-  afganistan = new Province("Afganistan", 37, 42, 13, 16, "No One", 0, 0, 0, 10, 4);
-  pakistan = new Province("Pakistan", 36, 38, 16, 18, "No One", 0, 0, 0, 10, 4);
-  arabia = new Province("Arabia", 33, 36, 16, 21, "No One", 0, 0, 0, 10, 4);
-  india = new Province("India", 38, 42, 16, 22, "No One", 0, 0, 0, 10, 4);
-  sriLanka = new Province("Sri Lanka", 43, 44, 22, 24, "No One", 0, 0, 0, 10, 4);
+  sriLanka = new Province("Sri Lanka", 43, 44, 22, 24, "No One", 0, 0, 0, norCanAusCaribHealth, 4);
+  iran = new Province("Iran", 32, 37, 13, 16, "No One", 0, 0, 0, indianArabianHealth, 4);
+  afganistan = new Province("Afganistan", 37, 42, 13, 16, "No One", 0, 0, 0, indianArabianHealth, 4);
+  pakistan = new Province("Pakistan", 36, 38, 16, 18, "No One", 0, 0, 0, indianArabianHealth, 4);
+  arabia = new Province("Arabia", 33, 36, 16, 21, "No One", 0, 0, 0, indianArabianHealth, 4);
+  india = new Province("India", 38, 42, 16, 22, "No One", 0, 0, 0, indianArabianHealth, 4);
+
   //Russia and Japan
   russia = new Province("Russia", 32, 37, 3, 13, "Uncolonizable Men", 0, 0, 0, 10, 4);
   japan = new Province("Japan", 53, 54, 15, 19, "Uncolonizable Men", 0, 0, 0, 10, 4);
-  northSiberia = new Province("Northern Siberia", 37, 54, 2, 7, "No One", 0, 0, 0, 10, 4);
-  southSiberia = new Province("Southern Siberia", 37, 53, 7, 13, "No One", 0, 0, 0, 10, 4);
+  northSiberia = new Province("Northern Siberia", 37, 54, 2, 7, "No One", 0, 0, 0, norCanAusCaribHealth, 4);
+  southSiberia = new Province("Southern Siberia", 37, 53, 7, 13, "No One", 0, 0, 0, norCanAusCaribHealth, 4);
   //China and IndoChina
-  mongolia = new Province("Mongolia", 42, 50, 13, 15, "No One", 0, 0, 0, 10, 4);
-  tibet = new Province("Tibet", 42, 46, 15, 18, "No One", 0, 0, 0, 10, 4);
-  centralChina = new Province("Central China", 46, 50, 15, 18, "No One", 0, 0, 0, 10, 4);
-  easternChina = new Province("Eastern China", 50, 51, 13, 19, "No One", 0, 0, 0, 10, 4);
-  southChina = new Province("South China", 42, 50, 18, 19, "No One", 0, 0, 0, 10, 4);
-  indoChina = new Province("IndoChina", 46, 49, 19, 23, "No One", 0, 0, 0, 10, 4);
+  mongolia = new Province("Mongolia", 42, 50, 13, 15, "No One", 0, 0, 0, regularChineseHealth, 4);
+  tibet = new Province("Tibet", 42, 46, 15, 18, "No One", 0, 0, 0, regularChineseHealth, 4);
+  centralChina = new Province("Central China", 46, 50, 15, 18, "No One", 0, 0, 0, regularChineseHealth, 4);
+  easternChina = new Province("Eastern China", 50, 51, 13, 19, "No One", 0, 0, 0, regularChineseHealth, 4);
+  southChina = new Province("South China", 42, 50, 18, 19, "No One", 0, 0, 0, regularChineseHealth, 4);
+  indoChina = new Province("IndoChina", 46, 49, 19, 23, "No One", 0, 0, 0, indoChineseHealth, 4);
   //Oceania
-  indonesia = new Province("Indonesia", 47, 53, 26, 27, "No One", 0, 0, 0, 10, 4);
-  australia = new Province("Australia", 47, 53, 31, 36, "No One", 0, 0, 0, 10, 4);
+  indonesia = new Province("Indonesia", 47, 53, 26, 27, "No One", 0, 0, 0, indoChineseHealth, 4);
+  australia = new Province("Australia", 47, 53, 31, 36, "No One", 0, 0, 0, norCanAusCaribHealth, 4);
 
 }
 
