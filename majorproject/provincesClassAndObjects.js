@@ -123,7 +123,7 @@ class Province {
           this.c = 1;
         }
         //this turns off the popup
-        isClicked(this.x, this.y, this.x1, this.y1, this.n, this.g, this.r, this.c, this.ownedBy, this.h,this.mH);
+        isClicked(this.x, this.y, this.x1, this.y1, this.n, this.g, this.r, this.c, this.ownedBy, this.h,this.mH, this.s);
         if (keyIsPressed && (key === "c"|| key === "C") || isShopOpen === true || showUnitMap === true) {
           this.c = 0;
 

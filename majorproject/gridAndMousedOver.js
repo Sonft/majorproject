@@ -35,7 +35,7 @@ function displayGrid() {
 
 //DISPLAY FUNCTION USES THIS
 //countries call on this to see if they are being clicked
-function isClicked(x1, y1, x2, y2, countryName, gold, resources, isClicked, ownedBy, health, maxHealth) {
+function isClicked(x1, y1, x2, y2, countryName, gold, resources, isClicked, ownedBy, health, maxHealth, strength) {
   if (isClicked === 1 && showUnitMap === false && isShopOpen === false) {
     fill(255);
     rect(windowWidth / 2 - 100, windowHeight / 2 - 100, 200, 230);
@@ -43,9 +43,10 @@ function isClicked(x1, y1, x2, y2, countryName, gold, resources, isClicked, owne
     textSize(12);
     text("This is " + countryName, windowWidth / 2 - 90, windowHeight / 2 - 80);
     text("It is owned by: " + ownedBy, windowWidth / 2 - 90, windowHeight / 2 - 60);
-    text("It has this many resources: " + resources, windowWidth / 2 - 90, windowHeight / 2- 40);
-    text("It has this much gold: " + gold, windowWidth / 2 - 90, windowHeight / 2 - 20);
-    text("It has this much health left: " + health + "/" + maxHealth , windowWidth / 2 - 90, windowHeight / 2);
+    text("resources: " + resources, windowWidth / 2 - 90, windowHeight / 2- 40);
+    text("gold: " + gold, windowWidth / 2 - 90, windowHeight / 2 - 20);
+    text("health: " + health + "/" + maxHealth , windowWidth / 2 - 90, windowHeight / 2);
+    text("possible damage inflicted: " + strength , windowWidth / 2 - 90, windowHeight / 2);
     text("Press C to remove this page!", windowWidth / 2 - 90, windowHeight / 2 + 80);
   }
 }
