@@ -20,7 +20,7 @@
 //Units move on top of the information bar for countries
 //Make it clear which country is playing currently
 //Explain how to attack province
-
+//Test1
 
 //setting variables
 let gameState = 1;
