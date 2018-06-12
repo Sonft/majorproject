@@ -77,7 +77,7 @@ class Infantry {
             image(britainUnit, x * blockWidth, y * blockHeight, blockWidth, blockHeight);
           }
           else if (showUnitMap === true&& this.m >0) {
-            tint("green");
+            tint(31, 190, 214);
             image(britainUnit, x * blockWidth, y * blockHeight, blockWidth, blockHeight);
           }
           else if (showUnitMap === true&& this.m <=0) {
@@ -127,10 +127,13 @@ class Infantry {
           unitMap[x][y] = 0;
         }
         if(this.ownedBy !== "DEAD"){
-          stroke(0);
-          fill(255);
+
+          fill(0);
+          textSize(windowWidth/ 150);
           text(this.health,x * blockWidth, y * blockHeight, blockWidth, blockHeight);
+          text(this.m,(x+0.75) * blockWidth, (y+0.5) * blockHeight, blockWidth, blockHeight);
           noStroke();
+
         }
 
       }

@@ -89,27 +89,29 @@ function headsUpDisplay(playerCountry) {
   rectMode(CORNERS);
   rect(windowWidth - 7 * blockWidth, windowHeight - 3 * blockHeight, windowWidth - 4 * blockWidth, windowHeight);
   rectMode(CORNER);
+  textSize(windowWidth/100);
   fill(0);
-  textSize(20);
   text("shop", windowWidth - 7 * blockWidth, windowHeight - 3 * blockHeight, windowWidth - 4 * blockWidth, windowHeight);
 
-  if (showUnitMap === true){
+  if (playerTurn === 1){
+    fill(255);
+  }
+  else{
     fill(0);
+  }
+  if (showUnitMap === true){
     textSize(windowWidth/100);
     text("unit map, press m to change", windowWidth - 12 * blockWidth, windowHeight - 3 * blockHeight, 5 * blockWidth, blockHeight * 3);
 
   }
   if (showUnitMap === false){
-    fill(0);
     textSize(windowWidth/100);
     text("province map, press m to change", windowWidth - 12 * blockWidth, windowHeight - 3 * blockHeight, 5 * blockWidth, blockHeight * 3);
 
   }
 
-  fill(0);
-  textSize(windowWidth/100);
-  text("press w to go up, a to go left, s to go down, and d to go right. click on units to move them!", windowWidth - 20 * blockWidth, windowHeight - 3 * blockHeight, 8 * blockWidth, blockHeight * 3);
-
+  textSize(windowWidth/110);
+  text( "press W to go up, A to go left, S to go down, and D to go right. click on units to move them! Press B to bombard provinces, move into enemy units to attack them, and click on the shop to buy new units.",windowWidth - 35 * blockWidth, windowHeight - 3 * blockHeight, 18 * blockWidth, blockHeight * 3);
   noStroke();
 }
 

@@ -152,7 +152,7 @@ function backGroundThree() {
   fill(255);
   textSize(30);
   text("these are the rules", 10, 50);
-  //Player Combat works like dice rolls.
+  text("Player Combat works like dice rolls.", 10, 70);
   //Unit movement works depending on unit, tech, and number of squares moved.
   //There are four large colonizing european nations.
   //There are 58 provinces in total and each province counts as a certain amount of score.
