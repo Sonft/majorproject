@@ -11,6 +11,17 @@
 //I was here on the ground floor Jerry, do you even love this project? are you even invested?
 //This is my child Amar.
 
+//To work on for later
+//Bombardment and insturctions
+//Text on france HUD
+//Units can move without being in unit map mode
+//Show number of moves left with unit
+//Show the health more clearly
+//Units move on top of the information bar for countries
+//Make it clear which country is playing currently
+//Explain how to attack province
+
+
 //setting variables
 let gameState = 1;
 let playerTurn = 0;

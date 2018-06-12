@@ -179,24 +179,24 @@ function makeProvinceVariables() {
   congo = new Province("Congo", 26, 29, 23, 29,
     "No One", 7, 5, 0, centSouAfricaHealth, 20, centSouAfricaHealth);
   mombasa = new Province("Mombasa", 29, 30, 24, 30,
-    "No One", 0, 0, 0, centSouAfricaHealth, 4, centSouAfricaHealth);
+    "No One", 5, 3, 0, centSouAfricaHealth, 15, centSouAfricaHealth);
   southAfrica = new Province("South Africa", 25, 29, 29, 32,
-    "No One", 0, 0, 0, centSouAfricaHealth, 4, centSouAfricaHealth);
+    "No One", 7, 7, 0, centSouAfricaHealth, 25, centSouAfricaHealth);
   madagascar = new Province("Madagascar", 32, 34, 26, 29,
-    "No One", 0, 0, 0, centSouAfricaHealth, 4, centSouAfricaHealth);
+    "No One", 2, 2, 0, centSouAfricaHealth, 10, centSouAfricaHealth);
   //Middle East and India
   sriLanka = new Province("Sri Lanka", 43, 44, 22, 24,
-    "No One", 0, 0, 0, norCanAusCaribHealth, 4, norCanAusCaribHealth);
+    "No One", 4, 4, 0, norCanAusCaribHealth, 14, norCanAusCaribHealth);
   iran = new Province("Iran", 32, 37, 13, 16,
-    "No One", 0, 0, 0, indianArabianHealth, 4, indianArabianHealth);
+    "No One", 14, 7, 0, indianArabianHealth, 45, indianArabianHealth);
   afganistan = new Province("Afganistan", 37, 42, 13, 16,
-    "No One", 0, 0, 0, indianArabianHealth, 4, indianArabianHealth);
+    "No One", 4, 14, 0, indianArabianHealth, 50, indianArabianHealth);
   pakistan = new Province("Pakistan", 36, 38, 16, 18,
-    "No One", 0, 0, 0, indianArabianHealth, 4, indianArabianHealth);
+    "No One", 10, 10, 0, indianArabianHealth, 50, indianArabianHealth);
   arabia = new Province("Arabia", 33, 36, 16, 21,
-    "No One", 0, 0, 0, indianArabianHealth, 4, indianArabianHealth);
+    "No One", 25, 5, 0, indianArabianHealth, 45, indianArabianHealth);
   india = new Province("India", 38, 42, 16, 22,
-    "No One", 0, 0, 0, indianArabianHealth, 4, indianArabianHealth);
+    "No One", 40, 25, 0, indianArabianHealth, 65, indianArabianHealth);
 
   //Russia and Japan
   russia = new Province("Russia", 32, 37, 3, 13,
@@ -204,27 +204,27 @@ function makeProvinceVariables() {
   japan = new Province("Japan", 53, 54, 15, 19,
     "Uncolonizable Men", 0, 0, 0, 10, 4, 10);
   northSiberia = new Province("Northern Siberia", 37, 54, 2, 7,
-    "No One", 0, 0, 0, norCanAusCaribHealth, 4, norCanAusCaribHealth);
+    "No One", 1, 10, 0, norCanAusCaribHealth, 7, norCanAusCaribHealth);
   southSiberia = new Province("Southern Siberia", 37, 53, 7, 13,
-    "No One", 0, 0, 0, norCanAusCaribHealth, 4, norCanAusCaribHealth);
+    "No One", 1, 10, 0, norCanAusCaribHealth, 7, norCanAusCaribHealth);
   //China and IndoChina
   mongolia = new Province("Mongolia", 42, 50, 13, 15,
-    "No One", 0, 0, 0, regularChineseHealth, 4, regularChineseHealth);
+    "No One", 2, 10, 0, regularChineseHealth, 18, regularChineseHealth);
   tibet = new Province("Tibet", 42, 46, 15, 18,
-    "No One", 0, 0, 0, regularChineseHealth, 4, regularChineseHealth);
+    "No One", 3, 5, 0, regularChineseHealth, 25, regularChineseHealth);
   centralChina = new Province("Central China", 46, 50, 15, 18,
-    "No One", 0, 0, 0, regularChineseHealth, 4, regularChineseHealth);
+    "No One", 5, 20, 0, regularChineseHealth, 20, regularChineseHealth);
   easternChina = new Province("Eastern China", 50, 51, 13, 19,
-    "No One", 0, 0, 0, regularChineseHealth, 4, regularChineseHealth);
+    "No One", 30, 13, 0, regularChineseHealth, 65, regularChineseHealth);
   southChina = new Province("South China", 42, 50, 18, 19,
-    "No One", 0, 0, 0, regularChineseHealth, 4, regularChineseHealth);
+    "No One", 25, 15, 0, regularChineseHealth, 60, regularChineseHealth);
   indoChina = new Province("IndoChina", 46, 49, 19, 23,
-    "No One", 0, 0, 0, indoChineseHealth, 4, indoChineseHealth);
+    "No One", 13, 14, 0, indoChineseHealth, 40, indoChineseHealth);
   //Oceania
   indonesia = new Province("Indonesia", 47, 53, 26, 27,
-    "No One", 0, 0, 0, indoChineseHealth, 4, indoChineseHealth);
+    "No One", 20, 20, 0, indoChineseHealth, 30, indoChineseHealth);
   australia = new Province("Australia", 47, 53, 31, 36,
-    "No One", 0, 0, 0, norCanAusCaribHealth, 4, norCanAusCaribHealth);
+    "No One", 5, 7, 0, norCanAusCaribHealth, 10, norCanAusCaribHealth);
 
 }
 
