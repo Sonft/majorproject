@@ -43,6 +43,7 @@ let spainUnit;
 let britainUnit;
 let portugalUnit;
 let franceUnit;
+let titleScreen;
 
 // tier 9 = 10; tier 8 = 15; tier 7 = 20; tier 6 = 30; tier 5 = 35; tier 4 = 40; tier 3 = 50; tier 2 = 70; tier 1 = 75;
 
@@ -79,7 +80,7 @@ function setup() {
   createCanvas(windowWidth, windowHeight);
   document.documentElement.style.overflow = "hidden";
   //Creating a grid
-
+  titleScreen = loadImage("images/homeScreen.jpg");
   portugalUnit = loadImage("images/portugal.PNG");
   franceUnit = loadImage("images/france.PNG");
   britainUnit = loadImage("images/britain.PNG");

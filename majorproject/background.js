@@ -17,31 +17,38 @@ function checkState() {
 //makes the home screen
 function backGroundOne() {
   //the aesthetics of the screen
-  background(0, 150, 130);
+  background(164,148,128);
+  image(titleScreen, 0, 0, windowWidth/2, windowHeight);
+
+  textSize(windowWidth/ 30);
+  text(" The Imperialist experience", windowWidth / 2, 1 * blockHeight , windowWidth/2, 20 * blockHeight);
+
   fill(0);
-  rect(windowWidth / 2 - 100, windowHeight / 2 - 50, 100, 100);
+  rectMode(CENTER);
+  rect( (windowWidth/ 4)*3 , 15* blockHeight, 5 * blockWidth, 4 * blockHeight );
   fill(255);
   textSize(30);
-  text("Play", windowWidth / 2 - 80, windowHeight / 2);
-
+  text("Play",(windowWidth/ 4)*3 , 15* blockHeight, 5 * blockWidth, 4 * blockHeight);
   //sends to the game
-  if (windowWidth / 2 - 100 < mouseX && mouseX < windowWidth / 2 && windowHeight / 2 - 50 < mouseY && mouseY < windowHeight / 2 + 50 && mouseIsPressed) {
+  if ( mouseX > (windowWidth/ 4)*3 -2.5*blockWidth && mouseY >13* blockHeight && mouseX < (windowWidth/ 4)*3 + (2.5 * blockWidth)&& mouseY < 17* blockHeight  && mouseIsPressed) {
     gameState = 4;
     background(0);
   }
+
   //the aesthetics of the screen
 
   fill(0);
-  rect(windowWidth / 2 - 100, windowHeight / 2 + 200, 100, 100);
+  rect((windowWidth/ 4)*3 , 19* blockHeight, 5 * blockWidth, 4 * blockHeight );
   fill(255);
-  text("Rules", windowWidth / 2 - 100, windowHeight / 2 + 250);
+  text("Rules", (windowWidth/ 4)*3 , 19* blockHeight, 5 * blockWidth, 4 * blockHeight );
 
 
   //sends to the tutorial
-  if (windowWidth / 2 - 100 < mouseX && mouseX < windowWidth / 2 + 100 && windowHeight / 2 + 200 < mouseY && mouseY < windowHeight / 2 + 300 && mouseIsPressed) {
+  if ((windowWidth/ 4)*3 -2.5*blockWidth< mouseX && mouseX < (windowWidth/ 4)*3+ 2.5 * blockWidth &&  17* blockHeight < mouseY && mouseY < 21* blockHeight&&mouseIsPressed) {
     gameState = 3;
     background(0);
   }
+  rectMode(CORNER);
 }
 
 //starts the function chain that makes the world

@@ -46,7 +46,7 @@ function isClicked(x1, y1, x2, y2, countryName, gold, resources, isClicked, owne
     text("resources: " + resources, windowWidth / 2 - 90, windowHeight / 2- 40);
     text("gold: " + gold, windowWidth / 2 - 90, windowHeight / 2 - 20);
     text("health: " + health + "/" + maxHealth , windowWidth / 2 - 90, windowHeight / 2);
-    text("possible damage inflicted: " + strength , windowWidth / 2 - 90, windowHeight / 2);
+    text("possible damage inflicted: " + strength , windowWidth / 2 - 90, windowHeight / 2+20);
     text("Press C to remove this page!", windowWidth / 2 - 90, windowHeight / 2 + 80);
   }
 }
