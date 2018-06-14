@@ -17,11 +17,11 @@ function checkState() {
 //makes the home screen
 function backGroundOne() {
   //the aesthetics of the screen
-  background(164,148,128);
+  background(0, 49, 83);
   image(titleScreen, 0, 0, windowWidth/2, windowHeight);
 
   textSize(windowWidth/ 30);
-  text(" The Imperialist experience", windowWidth / 2, 1 * blockHeight , windowWidth/2, 20 * blockHeight);
+  text(" The Imperialism Experience", windowWidth / 2, 1 * blockHeight , windowWidth/2, 20 * blockHeight);
 
   fill(0);
   rectMode(CENTER);
@@ -124,6 +124,12 @@ function backGroundTwo() {
       print(playerTurn);//for code fixing
       endTurn = false;
       movementIterator =  false;
+      for (let i = 0; i < masterListOfCountry.length; i++) {
+        if (masterListOfCountry[i].h < masterListOfCountry[i].mH) {
+          masterListOfCountry[i].h += 1;
+        }
+      }
+
 
     }
     else if (playerTurn < playerCountries.length){
@@ -134,6 +140,9 @@ function backGroundTwo() {
       print(playerTurn);//for code fixing
       endTurn = false;
       movementIterator = false;
+      for (let x=0; x< playerCountries[playerTurn].u.length;x++){
+        playerCountry[playerTurn].u.onEnemyLand();
+      }
     }
     // let regularChineseHealth = 75; // (tier 1)
     // let indianArabianHealth = 70; // (tier 2)
@@ -144,11 +153,6 @@ function backGroundTwo() {
     // let westSouSouAmerHealth = 20; // (tier 7)
     // let norCanAusCaribHealth = 15; // (tier 8)
     // let quebAmerHealth = 10; // (tier 9)
-    for (let i = 0; i < masterListOfCountry.length; i++) {
-      if (masterListOfCountry[i].h < masterListOfCountry[i].mH) {
-        masterListOfCountry[i].h += 1;
-      }
-    }
   }
 }
 //makes the tutorial screen
@@ -195,7 +199,7 @@ function keyTyped() {
       if (playerGreatBritain.g >= 10 && playerGreatBritain.r >= 10 && unitMap[greatBritain.x][greatBritain.y]=== 0) {
         playerGreatBritain.g += -10;
         playerGreatBritain.r += -10;
-        let englishUnit = new Infantry(greatBritain.x, greatBritain.y, 10, "Great Britain",  0, 0, 0, 0, 3,3, 4, 0, 10);
+        let englishUnit = new Infantry(greatBritain.x, greatBritain.y, 10, "Great Britain",  0, 0, 0, 0, 3,3, 4, 0, 10,2);
         unitsOfGreatBritain.push(englishUnit);
 
       }
@@ -204,7 +208,7 @@ function keyTyped() {
       if (playerFrance.g >= 10 && playerFrance.r >= 10 && unitMap[france.x][france.y]=== 0) {
         playerFrance.g += -10;
         playerFrance.r += -10;
-        let frenchUnit = new Infantry(france.x , france.y, 10, "France", 0, 0, 0, 0, 3,3, 4, 0, 10);
+        let frenchUnit = new Infantry(france.x , france.y, 10, "France", 0, 0, 0, 0, 3,3, 4, 0, 10,4);
         unitsOfFrance.push(frenchUnit);
       }
     }
@@ -212,7 +216,7 @@ function keyTyped() {
       if (playerSpain.g >= 10 && playerSpain.r >= 10 && unitMap[spain.x][spain.y]=== 0) {
         playerSpain.g += -10;
         playerSpain.r += -10;
-        let spanishUnit = new Infantry(spain.x, spain.y, 10, "Spain", 0, 0, 0, 0, 3,3, 4, 0, 10);
+        let spanishUnit = new Infantry(spain.x, spain.y, 10, "Spain", 0, 0, 0, 0, 3,3, 4, 0, 10,3);
         unitsOfSpain.push(spanishUnit);
       }
 
@@ -221,7 +225,7 @@ function keyTyped() {
       if (playerPortugal.g >= 10 && playerPortugal.r >= 10 && unitMap[portugal.x][portugal.y]=== 0) {
         playerPortugal.g += -10;
         playerPortugal.r += -10;
-        let portugeseUnit = new Infantry(portugal.x, portugal.y, 10, "Portugal",  0, 0, 0, 0, 3,3, 4, 0, 10);
+        let portugeseUnit = new Infantry(portugal.x, portugal.y, 10, "Portugal",  0, 0, 0, 0, 3,3, 4, 0, 10,5);
         unitsOfPortugal.push(portugeseUnit);
       }
     }
@@ -233,3 +237,4 @@ function keyTyped() {
   }
 
 }
+//0 = ocean, 1 = hovered over, 2 = Great Britain AMAR>, 3 = spain, 4 = france, 5 =portugal, 6 = uncolonized

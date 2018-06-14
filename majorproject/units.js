@@ -49,7 +49,7 @@ function refreshABunchOfUnits() {
 
 
 class Infantry {
-  constructor(x, y, h, o, movesLeft, movesRight, movesDown, movesUp, moveLimit, maxMoves, strength, isSelected, maxHealth) {
+  constructor(x, y, h, o, movesLeft, movesRight, movesDown, movesUp, moveLimit, maxMoves, strength, isSelected, maxHealth, mapCompare) {
     this.x = x;
     this.y = y;
     this.x1 = x +1;
@@ -65,7 +65,7 @@ class Infantry {
     this.s = strength;
     this.isSelected = isSelected;
     this.maxHealth = maxHealth;
-
+    this.mapCompare = mapCompare;
   }
   display(x, y, movesLeft, movesRight, movesDown, movesUp, o) {
     for (let x = this.x; x <= this.x; x++) {
@@ -335,6 +335,13 @@ class Infantry {
         else {
           print("nope");
         }
+      }
+    }
+  }
+  onEnemyLand(){
+    for(let x = 0; x<masterListOfCountry.length;x++){
+      if(map[this.x][this.y] !== this.mapCompare){
+        this.h += -1;
       }
     }
   }
