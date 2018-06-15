@@ -2,6 +2,8 @@ let movementIterator = false;
 
 
 
+
+//This function cycles through every unit to display them
 function displayUnits() {
   for (let x = 0; x < unitsOfGreatBritain.length; x++) {
     unitsOfGreatBritain[x].display();
@@ -18,8 +20,8 @@ function displayUnits() {
 }
 
 
-
-function refreshABunchOfUnits() {
+//This function cycles through every unit at the end of turns to refresh their movement
+ refreshABunchOfUnits() {
   for (let x = 0; x < unitsOfGreatBritain.length; x++) {
     unitsOfGreatBritain[x].refreshUnit();
   }
@@ -47,26 +49,27 @@ function refreshABunchOfUnits() {
 
 
 
-
+//infantry class
 class Infantry {
   constructor(x, y, h, o, movesLeft, movesRight, movesDown, movesUp, moveLimit, maxMoves, strength, isSelected, maxHealth, mapCompare) {
-    this.x = x;
-    this.y = y;
-    this.x1 = x +1;
-    this.y1 = y +1;
-    this.health = h;
-    this.ownedBy = o;
-    this.l = movesLeft;
-    this.r = movesRight;
-    this.u = movesUp;
-    this.d = movesDown;
-    this.m = moveLimit;
-    this.max = maxMoves;
-    this.s = strength;
-    this.isSelected = isSelected;
-    this.maxHealth = maxHealth;
-    this.mapCompare = mapCompare;
+    this.x = x;//x coord
+    this.y = y;//y coord
+    this.x1 = x +1;//useless
+    this.y1 = y +1;//useless
+    this.health = h;//health
+    this.ownedBy = o;//a string that states which country owns it
+    this.l = movesLeft;//useless
+    this.r = movesRight;//useless
+    this.u = movesUp;//useless
+    this.d = movesDown;//useless
+    this.m = moveLimit;//moves left this turn
+    this.max = maxMoves;//maximum moves per turn
+    this.s = strength;//how much damage it does
+    this.isSelected = isSelected;//a boolean telling if this is selected
+    this.maxHealth = maxHealth;//max health
+    this.mapCompare = mapCompare;//a number vales for each country is given to compare with the map(used for attrition)
   }
+  //displays images for where units are
   display(x, y, movesLeft, movesRight, movesDown, movesUp, o) {
     for (let x = this.x; x <= this.x; x++) {
       for (let y = this.y; y <= this.y; y++) {
@@ -123,13 +126,14 @@ class Infantry {
             tint(255, 67);
             image(portugalUnit, x * blockWidth, y * blockHeight, blockWidth, blockHeight);
           }
-        } else if (this.ownedBy === "DEAD") {
+        } else if (this.ownedBy === "DEAD") {//USELESS CODE
           unitMap[x][y] = 0;
         }
+        //DISPLAYS HEALTH AND MOVES LEFT
         if(this.ownedBy !== "DEAD"){
 
           fill(0);
-          textSize(windowWidth/ 150);
+          textSize(windowWidth/ 100);
           text(this.health,x * blockWidth, y * blockHeight, blockWidth, blockHeight);
           text(this.m,(x+0.75) * blockWidth, (y+0.5) * blockHeight, blockWidth, blockHeight);
           noStroke();
@@ -142,17 +146,22 @@ class Infantry {
   }
 
 
-
+//pretty self explanitory
   moveThisUnit(moveLimit) {
     //move right
+    //if all the conditions to actually moce are not broken continue
     if (keyIsPressed && (key === "d" || key === "D") && this.m > 0 && movementIterator === true && this.isSelected === 1&& this.ownedBy !== "DEAD"&& showUnitMap === true && this.x < columns) {
       print("that's a lotta 1 damage");
+      //this makes sure it only mose one space at a time
       movementIterator = false;
+      //If there is an enemy unit
       if (unitMap[this.x][this.y] != unitMap[this.x + 1][this.y] && unitMap[this.x + 1][this.y] != 0) {
         print("that's a lotta 2 damage");
+        //Checks to see which unit it is attacking
         for (let i = 0; i < playerCountries.length; i++) {
           for (let j = 0; j < playerCountries[i].u.length; j++) {
             if (playerCountries[i].u[j].x === this.x + 1 && playerCountries[i].u[j].y === this.y) {
+              //Calculates and distributes damage based off of their strength numbers and health
               let damage = ceil(random(0, this.s));
               playerCountries[i].u[j].health = playerCountries[i].u[j].health - damage;
               print("that's a lotta damage");
@@ -162,6 +171,7 @@ class Infantry {
               if (this.health <= 0) {
                 this.ownedBy = "DEAD";
               }
+              //If it killed the unit it was fighting move into its square
               if (playerCountries[i].u[j].health <= 0) {
                 playerCountries[i].u[j].ownedBy = "DEAD";
                 this.x += 1;
@@ -172,7 +182,9 @@ class Infantry {
             }
           }
         }
-      } else {
+      }
+      //If there isnt an enemy unit just move there
+      else {
         this.x += 1;
         this.m += -1;
       }
@@ -287,12 +299,13 @@ class Infantry {
     }
   }
 
-
+  //refreshes units movement
   refreshUnit() {
     if (this.m < this.max && endTurn === true) {
       this.m = this.max;
     }
   }
+  //chacks to see if the mouse is within the box an has selected the unit
   selectThisUnit() {
     if (mouseX > blockWidth * this.x && mouseX < blockWidth * (this.x + 1) && mouseY > blockHeight * this.y && mouseY < blockHeight * (this.y + 1) && playerCountries[playerTurn].o === this.ownedBy&& this.ownedBy !== "DEAD") {
       this.isSelected = 1;
@@ -303,10 +316,12 @@ class Infantry {
       movementIterator = false;
     }
   }
+
+
   //Check through master list of colonies to find the right x and y values
 
   conquer() {
-
+//same logic and attacking units
     for (let i = 0; i < playerCountries[playerTurn].u.length; i++) {
       for (let j = 0; j < masterListOfCountry.length; j++) {
         if (masterListOfCountry[j].x <= playerCountries[playerTurn].u[i].x && playerCountries[playerTurn].u[i].x < masterListOfCountry[j].x1
@@ -338,16 +353,21 @@ class Infantry {
       }
     }
   }
+
+  //checks to see if the unit is on a tile owned by the player or no
   onEnemyLand(){
-    for(let x = 0; x<masterListOfCountry.length;x++){
-      if(map[this.x][this.y] !== this.mapCompare){
-        this.h += -1;
-      }
+    if(map[this.x][this.y] !== this.mapCompare && (map[this.x][this.y] === 1 ||map[this.x][this.y] === 6){
+      this.health += -1;
+      print("taken damage");
+    }
+    if( map[this.x][this.y] !== this.mapCompare && (map[this.x][this.y] === 2 || map[this.x][this.y] === 3 ||map[this.x][this.y] === 4 ||map[this.x][this.y] === 5){
+      this.health += -3;
+      print("taken damage");
     }
   }
 }
 
-
+//Splices dead units with no health out of the array
 function deadUnitCheck() {
   for(let i = 0; i < playerCountries.length; i++) {
     for (let j = 0; j < playerCountries[i].u.length; j++) {

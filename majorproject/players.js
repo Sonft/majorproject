@@ -1,5 +1,5 @@
 
-
+//This makes all the player countries objects countries before the game starts
 function playerObjects() {
   playerGreatBritain = new Player(
     "Great Britain",

@@ -19,7 +19,7 @@ function displayGrid() {
         fill(58, 190, 58);
       }
       else if (map[x][y] === 6) {
-        fill(255);
+        fill("BROWN");
       }
       else if (map[x][y] === 7) {
         fill(0);
@@ -88,6 +88,7 @@ function createGrid(columns, rows) {
   return randomGrid;
 }
 
+//creates an empty grid of units
 function createUnitGrid(columns, rows) {
   let randomUnitGrid = [];
   for (let x = 0; x < columns; x++) {
@@ -98,7 +99,7 @@ function createUnitGrid(columns, rows) {
   }
   return randomUnitGrid;
 }
-
+//based on what the number in the grid is, it will change what is displayed on the tile
 function displayUnitGrid() {
   for (let x = 0; x < columns; x++) {
     for (let y = 0; y < rows; y++) {
