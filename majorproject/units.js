@@ -21,7 +21,7 @@ function displayUnits() {
 
 
 //This function cycles through every unit at the end of turns to refresh their movement
- refreshABunchOfUnits() {
+ function refreshABunchOfUnits() {
   for (let x = 0; x < unitsOfGreatBritain.length; x++) {
     unitsOfGreatBritain[x].refreshUnit();
   }
@@ -356,11 +356,11 @@ class Infantry {
 
   //checks to see if the unit is on a tile owned by the player or no
   onEnemyLand(){
-    if(map[this.x][this.y] !== this.mapCompare && (map[this.x][this.y] === 1 ||map[this.x][this.y] === 6){
+    if(map[this.x][this.y] !== this.mapCompare && (map[this.x][this.y] === 0||map[this.x][this.y] === 6 )){
       this.health += -1;
       print("taken damage");
     }
-    if( map[this.x][this.y] !== this.mapCompare && (map[this.x][this.y] === 2 || map[this.x][this.y] === 3 ||map[this.x][this.y] === 4 ||map[this.x][this.y] === 5){
+    if(map[this.x][this.y] !== this.mapCompare && (map[this.x][this.y] === 2||map[this.x][this.y] === 3||map[this.x][this.y] === 4||map[this.x][this.y] === 5 )){
       this.health += -3;
       print("taken damage");
     }

@@ -19,7 +19,7 @@ function displayGrid() {
         fill(58, 190, 58);
       }
       else if (map[x][y] === 6) {
-        fill("BROWN");
+        fill(46,139,87);
       }
       else if (map[x][y] === 7) {
         fill(0);
