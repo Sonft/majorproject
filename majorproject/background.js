@@ -66,7 +66,7 @@ function backGroundTwo() {
     headsUpDisplay(playerCountries[playerTurn]);
 
 
-
+    // MOVE AND ATTACK WITH UNITS
     if (playerTurn === 0){
 
       for (let x = 0; x < unitsOfGreatBritain.length; x++) {
@@ -116,14 +116,19 @@ function backGroundTwo() {
   if (isShopOpen === true) {
     shopMenu();
   }
+  //END TURN EVENTS
   if (endTurn === true){
     if (playerTurn === playerCountries.length -1){
       playerCountries[playerTurn].att === false;
       playerTurn = 0;
-      refreshABunchOfUnits();
+      refreshABunchOfUnits();//SET MOVEMENT BACK TO FULL
       print(playerTurn);//for code fixing
       endTurn = false;
       movementIterator =  false;
+      for (let x=0; x< playerCountries[playerTurn].u.length;x++){
+        playerCountries[playerTurn].u[x].onEnemyLand();
+        print("well i guess ill die")
+      }
       for (let i = 0; i < masterListOfCountry.length; i++) {
         if (masterListOfCountry[i].h < masterListOfCountry[i].mH) {
           masterListOfCountry[i].h += 1;
@@ -141,7 +146,8 @@ function backGroundTwo() {
       endTurn = false;
       movementIterator = false;
       for (let x=0; x< playerCountries[playerTurn].u.length;x++){
-        playerCountry[playerTurn].u.onEnemyLand();
+        playerCountries[playerTurn].u[x].onEnemyLand();
+        print("well i guess ill die")
       }
     }
     // let regularChineseHealth = 75; // (tier 1)

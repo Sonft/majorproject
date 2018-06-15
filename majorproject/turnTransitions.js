@@ -16,8 +16,12 @@ function playerTurnFunc(playerTurn){
   }
 }
 
+
+
+
 //IM GONNA FIX THE PROBLEMS with clicking and it repeating the function for as long as you clicked it
 function mouseClicked(){
+  //Buttons
   if (mouseX > windowWidth - 4*blockWidth && mouseY >  windowHeight - 3*blockHeight && endTurn === false&& isShopOpen === false) {
     endTurn = true;
     playerCountries[playerTurn].att = false;
@@ -30,6 +34,8 @@ function mouseClicked(){
     isShopOpen = false;
   }
 
+
+//Selecting units
   if (endTurn === false && isShopOpen === false && playerTurn === 0){
     for(let x = 0; x < unitsOfGreatBritain.length; x++){
       unitsOfGreatBritain[x].selectThisUnit();
