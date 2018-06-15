@@ -111,12 +111,11 @@ function headsUpDisplay(playerCountry) {
   }
 
   textSize(windowWidth/110);
-  text( "press W to go up, A to go left, S to go down, and D to go right. click on units to move them! Press B to bombard provinces, move into enemy units to attack them, and click on the shop to buy new units. Be careful! you take attrition out of friendly land.",windowWidth - 35 * blockWidth, windowHeight - 3 * blockHeight, 18 * blockWidth, blockHeight * 3);
+  text( "press W to go up, A to go left, S to go down, and D to go right. click on units to move them! Press B to bombard provinces, move into enemy units to attack them, and click on the shop to buy new units.",windowWidth - 35 * blockWidth, windowHeight - 3 * blockHeight, 18 * blockWidth, blockHeight * 3);
   noStroke();
 }
 
 //This information is indirectly shown to the player through the HUD. THE ONLY THING THIS IS USED FOR IS THE HUD
-//USELESS CODE
 class PlayerHUDInfo {
   constuctor(ownedBy, gold, resources) {
     this.o = ownedBy;
