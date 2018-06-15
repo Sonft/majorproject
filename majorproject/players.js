@@ -36,7 +36,6 @@ function playerObjects() {
 
 //this is a function that asks the players how many will be playing!
 function askPlayerAmount() {
-  strokeWeight(2);
   stroke(0);
   background(0);
   fill(225,20,20);
