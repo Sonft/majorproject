@@ -292,8 +292,8 @@ class Infantry {
     //Enter to end turn of unit
     if (keyIsPressed && (keyCode === 13) && this.m > 0 && this.isSelected === 1&& this.ownedBy !== "DEAD") {
       this.m = 0;
-      if (this.health <= this.maxHealth/5 * 4) {
-        this.health += floor(this.maxHealth/5);
+      if (this.health <= this.maxHealth/4 * 3) {
+        this.health += ceil(this.maxHealth/4);
       }
 
     }
@@ -329,11 +329,11 @@ class Infantry {
           && masterListOfCountry[j].ownedBy !== this.ownedBy && this.ownedBy !== "DEAD" && this.m > 0 && masterListOfCountry[j].ownedBy !== "Uncolonizable Men" &&showUnitMap === true) {
 
 
-          let damage2 = ceil(random(0, masterListOfCountry[j].s));
+          let damage2 = ceil(random(1, masterListOfCountry[j].s));
           playerCountries[playerTurn].u[i].health = playerCountries[playerTurn].u[i].health - damage2;
           print("damage taken");
 
-          let damage = ceil(random(0, this.s));
+          let damage = ceil(random(1, this.s));
           masterListOfCountry[j].h = masterListOfCountry[j].h - damage;
           print("damaged");
 

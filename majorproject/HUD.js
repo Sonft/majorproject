@@ -70,7 +70,7 @@ function headsUpDisplay(playerCountry) {
         rect(windowWidth - 4 * blockWidth, windowHeight - 3 * blockHeight, windowWidth, windowHeight);
         fill(255);
         textSize(20);
-        text("End Turn", windowWidth - 4 * blockWidth, windowHeight - 3 * blockHeight, windowWidth, windowHeight);
+        text("End Turn " + turn, windowWidth - 4 * blockWidth, windowHeight - 3 * blockHeight, windowWidth, windowHeight);
       }
     }
   }
@@ -79,7 +79,7 @@ function headsUpDisplay(playerCountry) {
     rect(windowWidth - 4 * blockWidth, windowHeight - 3 * blockHeight, windowWidth, windowHeight);
     fill(255);
     textSize(20);
-    text("End Turn", windowWidth - 4 * blockWidth, windowHeight - 3 * blockHeight, windowWidth, windowHeight);
+    text("End Turn " + turn, windowWidth - 4 * blockWidth, windowHeight - 3 * blockHeight, windowWidth, windowHeight);
   }
 
   //text label = gold, then resources, then player country
@@ -141,7 +141,11 @@ function shopMenu() {
   rectMode(CORNERS);
   fill(0);
   textSize(20);
-  text("press 'U' to Buy a unit of basic infantry unit please and thank you, it will cost 10 gold and 10 resources",blockWidth * 6, blockHeight * 6, blockWidth * 11, blockHeight * 11);
+  text("press '1' to Buy a unit of basic infantry unit please and thank you, it will cost 10 gold and 10 resources",blockWidth * 6, blockHeight * 6, blockWidth * 11, blockHeight * 11);
+  if (turn>20){
+    text("press '2' to Buy a unit of less basic infantry unit please and thank you, it will cost 20 gold and 20 resources",blockWidth * 18, blockHeight * 6, blockWidth * 11, blockHeight * 11);
+  }
+
   rectMode(CORNER);
 
 }

@@ -23,6 +23,7 @@
 //Test1
 
 //setting variables
+let turn = 0;
 let gameState = 1;
 let playerTurn = 0;
 let countryInfoClicked = 0;

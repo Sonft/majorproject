@@ -131,7 +131,7 @@ function backGroundTwo() {
       }
       for (let i = 0; i < masterListOfCountry.length; i++) {
         if (masterListOfCountry[i].h < masterListOfCountry[i].mH) {
-          masterListOfCountry[i].h += 1;
+          masterListOfCountry[i].h +=masterListOfCountry[i].mH/5 ;
         }
       }
 
@@ -140,7 +140,7 @@ function backGroundTwo() {
     else if (playerTurn < playerCountries.length){
       playerCountries[playerTurn].att === false;
       playerTurn += 1;
-
+      turn += 1;
       refreshABunchOfUnits();
       print(playerTurn);//for code fixing
       endTurn = false;
@@ -200,12 +200,12 @@ function keyTyped() {
     showUnitMap = !showUnitMap;
   }
   //THIS IS FOR THE SHOP
-  if (isShopOpen === true && keyIsPressed && (key === "U"|| key ==="u")){
+  if (isShopOpen === true && keyIsPressed && (key === "1")){
     if (playerTurn === 0){
       if (playerGreatBritain.g >= 10 && playerGreatBritain.r >= 10 && unitMap[greatBritain.x][greatBritain.y]=== 0) {
         playerGreatBritain.g += -10;
         playerGreatBritain.r += -10;
-        let englishUnit = new Infantry(greatBritain.x, greatBritain.y, 10, "Great Britain",  0, 0, 0, 0, 3,3, 4, 0, 10,2);
+        let englishUnit = new Infantry(greatBritain.x, greatBritain.y, 10, "Great Britain",  0, 0, 0, 0, 3,3, 5, 0, 10,2);
         unitsOfGreatBritain.push(englishUnit);
 
       }
@@ -214,7 +214,7 @@ function keyTyped() {
       if (playerFrance.g >= 10 && playerFrance.r >= 10 && unitMap[france.x][france.y]=== 0) {
         playerFrance.g += -10;
         playerFrance.r += -10;
-        let frenchUnit = new Infantry(france.x , france.y, 10, "France", 0, 0, 0, 0, 3,3, 4, 0, 10,4);
+        let frenchUnit = new Infantry(france.x , france.y, 10, "France", 0, 0, 0, 0, 3,3, 5, 0, 10,4);
         unitsOfFrance.push(frenchUnit);
       }
     }
@@ -222,7 +222,7 @@ function keyTyped() {
       if (playerSpain.g >= 10 && playerSpain.r >= 10 && unitMap[spain.x][spain.y]=== 0) {
         playerSpain.g += -10;
         playerSpain.r += -10;
-        let spanishUnit = new Infantry(spain.x, spain.y, 10, "Spain", 0, 0, 0, 0, 3,3, 4, 0, 10,3);
+        let spanishUnit = new Infantry(spain.x, spain.y, 10, "Spain", 0, 0, 0, 0, 3,3, 5, 0, 10,3);
         unitsOfSpain.push(spanishUnit);
       }
 
@@ -231,7 +231,56 @@ function keyTyped() {
       if (playerPortugal.g >= 10 && playerPortugal.r >= 10 && unitMap[portugal.x][portugal.y]=== 0) {
         playerPortugal.g += -10;
         playerPortugal.r += -10;
-        let portugeseUnit = new Infantry(portugal.x, portugal.y, 10, "Portugal",  0, 0, 0, 0, 3,3, 4, 0, 10,5);
+        let portugeseUnit = new Infantry(portugal.x, portugal.y, 10, "Portugal",  0, 0, 0, 0, 3,3, 5, 0, 10,5);
+        unitsOfPortugal.push(portugeseUnit);
+      }
+    }
+  }
+
+
+
+
+
+
+// SPLIT
+
+
+
+  if (isShopOpen === true && keyIsPressed && (key === "2")&& turn>20){
+    if (playerTurn === 0){
+      if (playerGreatBritain.g >= 20 && playerGreatBritain.r >= 20 && unitMap[greatBritain.x][greatBritain.y]=== 0) {
+        playerGreatBritain.g += -20;
+        playerGreatBritain.r += -20;
+        let englishUnit = new Infantry(greatBritain.x, greatBritain.y, 20, "Great Britain",  0, 0, 0, 0, 4,4, 7, 0, 20,2);
+        unitsOfGreatBritain.push(englishUnit);
+
+      }
+    }
+
+
+
+    if (playerTurn === 1){
+      if (playerFrance.g >= 10 && playerFrance.r >= 10 && unitMap[france.x][france.y]=== 0) {
+        playerFrance.g += -10;
+        playerFrance.r += -10;
+        let frenchUnit = new Infantry(france.x , france.y, 20, "France", 0, 0, 0, 0, 4,4, 7, 0, 20,4);
+        unitsOfFrance.push(frenchUnit);
+      }
+    }
+    if (playerTurn === 2){
+      if (playerSpain.g >= 10 && playerSpain.r >= 10 && unitMap[spain.x][spain.y]=== 0) {
+        playerSpain.g += -10;
+        playerSpain.r += -10;
+        let spanishUnit = new Infantry(spain.x, spain.y, 20, "Spain", 0, 0, 0, 0, 4,4, 7, 0, 20,3);
+        unitsOfSpain.push(spanishUnit);
+      }
+
+    }
+    if (playerTurn === 3){
+      if (playerPortugal.g >= 10 && playerPortugal.r >= 10 && unitMap[portugal.x][portugal.y]=== 0) {
+        playerPortugal.g += -10;
+        playerPortugal.r += -10;
+        let portugeseUnit = new Infantry(portugal.x, portugal.y, 20, "Portugal",  0, 0, 0, 0, 4,4, 7, 0, 20,5);
         unitsOfPortugal.push(portugeseUnit);
       }
     }
